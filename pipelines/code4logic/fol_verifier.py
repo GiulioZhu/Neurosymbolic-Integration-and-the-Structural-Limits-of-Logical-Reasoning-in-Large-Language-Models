@@ -33,6 +33,8 @@ logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # SECTION 1 – Z3 PARSER
+# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# Entire recursive descent parser written to replace brittle exact-match logic.
 # ---------------------------------------------------------------------------
 # We translate the Unicode FOL string produced by basis_functions.py into
 # Z3 Bool/ForAll/Exists expressions.
@@ -375,6 +377,8 @@ def _check_z3(fol_a: str, fol_b: str):
 
 # ---------------------------------------------------------------------------
 # SECTION 2 – PROVER9 / NLTK FALLBACK
+# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# Added logical theorem proving fallback to handle Z3 timeouts and syntax drifts.
 # ---------------------------------------------------------------------------
 
 def _normalise_for_nltk(fol_str: str) -> str:
@@ -435,6 +439,7 @@ def _check_prover9(fol_a: str, fol_b: str):
 
 # ---------------------------------------------------------------------------
 # SECTION 3 – PUBLIC API
+# --- ORIGINAL CONCEPT (Liu, 2025) / CUSTOM INTEGRATION ---
 # ---------------------------------------------------------------------------
 
 def _normalise_string(s: str) -> str:

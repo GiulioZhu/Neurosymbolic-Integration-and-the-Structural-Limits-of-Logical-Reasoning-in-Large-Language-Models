@@ -21,6 +21,8 @@ def sanitize_id(name: str) -> str:
 
 def escape_str(s: str) -> str:
     return s.replace("'", "\\'")
+# --- ORIGINAL IMPLEMENTATION (Putra et al., 2026) ---
+# The base Pydantic AST models and structural methods (to_dict, getChild, etc.)
 
 class Constant(BaseModel):
     name : str
@@ -36,6 +38,9 @@ class Constant(BaseModel):
     def getChild(self):
         return []
     
+    # --- CUSTOM ADAPTATION (Giulio Zhu) ---
+    # The Z3 generation passes (z3declaration_pass, z3expression_pass) 
+    # were injected into ALL node classes to compile the AST into executable Z3 code.
     def z3declaration_pass(self):
         v = sanitize_id(self.name)
         return f"c_{v} = Const('{escape_str(self.name)}', Entity)\n"
@@ -382,6 +387,8 @@ class RelationalLogic(BaseModel):
         for s in self.sentences:
             s.apply_normalization(mapping)
 
+    # --- CUSTOM ADAPTATION (Giulio Zhu) ---
+    # Root Z3 compilation methods
     def z3declaration_pass(self):
         result = []
         for s in self.sentences:

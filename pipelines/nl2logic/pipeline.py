@@ -22,6 +22,9 @@ except ImportError:
     OpenAI = None
     AsyncOpenAI = None
 
+# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# Added wrappers for async local inference (vLLM/OpenAI) to support automated pipeline evaluation.
+
 class OpenAIWrapper:
     def __init__(self, model):
         self.model = model
@@ -87,7 +90,11 @@ class VLLMWrapper:
         import json
         return fmt(**json.loads(response.choices[0].message.content))
 
+# --- END CUSTOM ADAPTATION ---
+
 class Pipeline:
+    # --- CUSTOM ADAPTATION (Giulio Zhu) ---
+    # Refactored __init__ to use custom async LLM wrappers
     def __init__(self, llm, model, logging=False, url="http://localhost:8000/v1"):
         self.llm_type = llm
         if llm == 'openai':
@@ -97,7 +104,10 @@ class Pipeline:
         else: 
             raise ValueError("LLM is not valid")
         self.logging=logging
+    # --- END CUSTOM ADAPTATION ---
 
+    # --- ORIGINAL IMPLEMENTATION (Putra et al., 2026) ---
+    # Core recursive parsing logic
     def log(self, text):
         if self.logging:
             print(text)
