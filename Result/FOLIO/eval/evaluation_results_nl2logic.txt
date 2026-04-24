@@ -1,0 +1,95 @@
+NL2LOGIC Evaluation — dataset=folio, model=Qwen/Qwen2.5-Coder-7B-Instruct-AWQ
+============================================================
+
+[Bin 1] Result 1:
+  NL:          Roderick Strong leads a professional wrestling stable.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 1: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 2] Result 1:
+  NL:          All squares are shapes.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 2: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 3] Result 1:
+  NL:          Tom is an Ocellated wild turkey.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 3: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 4] Result 1:
+  NL:          The Legend of Zelda is on the Top 10 list.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 4: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 5] Result 1:
+  NL:          There is an animal.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 5: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 6] Result 1:
+  NL:          No one gets the flu.
+  Generated:   ERROR: Connection error.
+  Ground Truth:Unknown
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 6: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 7] Result 1:
+  NL:          If Rockie is not both a turtle and a squirrel, then Rockie is either cute or skittish.
+  Generated:   ERROR: Connection error.
+  Ground Truth:True
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 7: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 8] Result 1:
+  NL:          James has lunch in the company.
+  Generated:   ERROR: Connection error.
+  Ground Truth:Unknown
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 8: 0.0%  (0/1, 1 errors)
+============================================================
+
+[Bin 9] Result 1:
+  NL:          Bonnie performs in school talent shows often.
+  Generated:   ERROR: Connection error.
+  Ground Truth:Unknown
+  Match: False  |  Method: error
+----------------------------------------
+
+Bin 9: 0.0%  (0/1, 1 errors)
+============================================================
+
+
+Overall Accuracy: 0.0%  (0/9)

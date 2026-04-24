@@ -1,45 +1,39 @@
-#--------------------------#
-# Magento Default Files    #
-#--------------------------#
+# ── Virtual Environments ──────────────────────────────────────────────────────
+vllm-env/
+.venv/
+env/
+venv/
 
-/PATCH_*.sh
+# ── Python Artifacts ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
 
-/app/etc/local.xml
+# ── Environment & Secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+*.key
 
-/media/*
-!/media/.htaccess
+# ── OS / Editor Noise ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
 
-!/media/customer
-/media/customer/*
-!/media/customer/.htaccess
+# ── Project Results & Data ───────────────────────────────────────────────────
+# Track the Result directory itself but ignore all generated output files.
+Project/Result/*
+!Project/Result/.gitkeep
 
-!/media/dhl
-/media/dhl/*
-!/media/dhl/logo.jpg
-
-!/media/downloadable
-/media/downloadable/*
-!/media/downloadable/.htaccess
-
-!/media/xmlconnect
-/media/xmlconnect/*
-
-!/media/xmlconnect/custom
-/media/xmlconnect/custom/*
-!/media/xmlconnect/custom/ok.gif
-
-!/media/xmlconnect/original
-/media/xmlconnect/original/*
-!/media/xmlconnect/original/ok.gif
-
-!/media/xmlconnect/system
-/media/xmlconnect/system/*
-!/media/xmlconnect/system/ok.gif
-
-/var/*
-!/var/.htaccess
-
-!/var/package
-/var/package/*
-!/var/package/*.xml
-
+# Ignore bulky dataset folders
+Project/data/*
+!Project/data/*.py
+!Project/data/dataset_config.py

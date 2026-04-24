@@ -1,0 +1,20 @@
+pandas
+torch
+transformers
+accelerate
+bitsandbytes
+huggingface_hub
+pyleri
+datasets
+sentencepiece
+openai
+z3-solver
+nltk
+python-dotenv
+wtpsplit
+tqdm
+pandas
+pandas-stubs
+openai
+tqdm
+vllm; sys_platform == 'linux'

@@ -1,0 +1,56 @@
+{
+  "Bin 1": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 2": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 3": {
+    "total": 166,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 4": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 5": {
+    "total": 166,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 6": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 7": {
+    "total": 166,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 8": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  },
+  "Bin 9": {
+    "total": 167,
+    "correct": 0,
+    "errors": 0,
+    "accuracy": 0.0
+  }
+}

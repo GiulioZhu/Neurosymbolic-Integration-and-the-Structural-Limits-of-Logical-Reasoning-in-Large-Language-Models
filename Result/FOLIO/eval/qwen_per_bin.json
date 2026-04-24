@@ -1,0 +1,56 @@
+{
+  "Bin 1": {
+    "total": 14,
+    "correct": 6,
+    "errors": 0,
+    "accuracy": 42.857142857142854
+  },
+  "Bin 2": {
+    "total": 25,
+    "correct": 7,
+    "errors": 0,
+    "accuracy": 28.000000000000004
+  },
+  "Bin 3": {
+    "total": 24,
+    "correct": 9,
+    "errors": 0,
+    "accuracy": 37.5
+  },
+  "Bin 4": {
+    "total": 20,
+    "correct": 4,
+    "errors": 0,
+    "accuracy": 20.0
+  },
+  "Bin 5": {
+    "total": 23,
+    "correct": 2,
+    "errors": 0,
+    "accuracy": 8.695652173913043
+  },
+  "Bin 6": {
+    "total": 23,
+    "correct": 6,
+    "errors": 0,
+    "accuracy": 26.08695652173913
+  },
+  "Bin 7": {
+    "total": 12,
+    "correct": 1,
+    "errors": 0,
+    "accuracy": 8.333333333333332
+  },
+  "Bin 8": {
+    "total": 23,
+    "correct": 2,
+    "errors": 0,
+    "accuracy": 8.695652173913043
+  },
+  "Bin 9": {
+    "total": 39,
+    "correct": 8,
+    "errors": 0,
+    "accuracy": 20.51282051282051
+  }
+}

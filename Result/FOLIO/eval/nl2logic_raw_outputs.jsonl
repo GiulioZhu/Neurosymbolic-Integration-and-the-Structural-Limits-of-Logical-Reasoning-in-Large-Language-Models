@@ -1,0 +1,9 @@
+{"nl": "Roderick Strong leads a professional wrestling stable.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.742600202560425}
+{"nl": "All squares are shapes.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.320887804031372}
+{"nl": "Tom is an Ocellated wild turkey.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.60192322731018}
+{"nl": "The Legend of Zelda is on the Top 10 list.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.421534776687622}
+{"nl": "There is an animal.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.404305219650269}
+{"nl": "No one gets the flu.", "generated_fol": "ERROR: Connection error.", "ground_truth": "Unknown", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.365135669708252}
+{"nl": "If Rockie is not both a turtle and a squirrel, then Rockie is either cute or skittish.", "generated_fol": "ERROR: Connection error.", "ground_truth": "True", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.50838017463684}
+{"nl": "James has lunch in the company.", "generated_fol": "ERROR: Connection error.", "ground_truth": "Unknown", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.41871166229248}
+{"nl": "Bonnie performs in school talent shows often.", "generated_fol": "ERROR: Connection error.", "ground_truth": "Unknown", "match": false, "method": "error", "reason": "Connection error.", "duration": 8.522368431091309}
