@@ -1,5 +1,0 @@
-wtpsplit
-openai
-pydantic
-python-dotenv
-torch

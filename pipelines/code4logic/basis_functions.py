@@ -8,7 +8,7 @@ Defines the primitive basis functions used by the CODE4LOGIC LLM for generating 
 from typing import List
 
 # ------------------------------------------------------------------
-# BASIS FUNCTIONS (The "API" the LLM learns to use)
+# BASIS FUNCTIONS (The API the LLM learns to use)
 # ------------------------------------------------------------------
 
 def Constant(constant_name: str):

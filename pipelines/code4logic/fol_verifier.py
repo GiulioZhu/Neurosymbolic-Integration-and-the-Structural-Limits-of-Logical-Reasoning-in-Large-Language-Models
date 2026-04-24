@@ -97,7 +97,7 @@ class _Tokenizer:
         for m in self._TOKEN_RE.finditer(text):
             tok = m.group(1)
             if tok:
-                # Fix 1: Case-normalise predicate/constant tokens so that
+                # Case-normalise predicate/constant tokens so that
                 # Stock(kO) and Stock(ko) resolve to the same Z3 symbol.
                 if tok not in _KEYWORDS:
                     tok = tok.lower()
@@ -377,7 +377,7 @@ def _check_z3(fol_a: str, fol_b: str):
 
 # ---------------------------------------------------------------------------
 # SECTION 2 – PROVER9 / NLTK FALLBACK
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION ---
 # Added logical theorem proving fallback to handle Z3 timeouts and syntax drifts.
 # ---------------------------------------------------------------------------
 
