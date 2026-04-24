@@ -22,7 +22,7 @@ except ImportError:
     OpenAI = None
     AsyncOpenAI = None
 
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION ---
 # Added wrappers for async local inference (vLLM/OpenAI) to support automated pipeline evaluation.
 
 class OpenAIWrapper:
@@ -93,7 +93,7 @@ class VLLMWrapper:
 # --- END CUSTOM ADAPTATION ---
 
 class Pipeline:
-    # --- CUSTOM ADAPTATION (Giulio Zhu) ---
+    # --- CUSTOM ADAPTATION ---
     # Refactored __init__ to use custom async LLM wrappers
     def __init__(self, llm, model, logging=False, url="http://localhost:8000/v1"):
         self.llm_type = llm

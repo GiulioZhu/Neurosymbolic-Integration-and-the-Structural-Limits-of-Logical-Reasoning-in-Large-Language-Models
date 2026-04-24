@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # SECTION 1 – Z3 PARSER
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION ---
 # Entire recursive descent parser written to replace brittle exact-match logic.
 # ---------------------------------------------------------------------------
 # We translate the Unicode FOL string produced by basis_functions.py into
@@ -499,32 +499,3 @@ def check_equivalence(fol_a: str, fol_b: str) -> dict:
         "method": "string_match",
         "reason": "string_match: exact comparison after normalisation",
     }
-
-
-# ---------------------------------------------------------------------------
-# Quick self-test (run this file directly)
-# ---------------------------------------------------------------------------
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    tests = [
-        # (A,                               B,                             expected_match)
-        ("∃x Animal(x)",                   "∃x (Animal(x))",              True),
-        ("∀x (Square(x) → Shape(x))",      "∀x (Square(x) → Shape(x))",  True),
-        ("Turtle(rockie)",                  "Turtle(rockie)",              True),
-        ("¬Turtle(rockie)",                 "¬Turtle(rockie)",             True),
-        ("Turtle(rockie) ∨ Cute(rockie)",   "Turtle(rockie) ∨ Cute(rockie)", True),
-        # Different predicates → NOT equivalent
-        ("OcellatedWildTurkey(tom)",        "WildTurkey(joey)",            False),
-        ("James(LunchInCompany)",           "HasLunch(james, company)",    False),
-        # Structural equivalence: ¬(A∧B) ↔ (¬A ∨ ¬B)  De Morgan's law
-        ("¬(P(a) ∧ Q(a))",                 "¬P(a) ∨ ¬Q(a)",              True),
-    ]
-    print(f"{'A':<40} {'B':<40} {'Expected':>8} {'Got':>8} {'Method':<12}")
-    print("-" * 115)
-    for a, b, expected in tests:
-        res = check_equivalence(a, b)
-        status = "OK" if res["match"] == expected else "FAIL"
-        print(
-            f"{a:<40} {b:<40} {str(expected):>8} {str(res['match']):>8}"
-            f"  {res['method']:<12}  {status}"
-        )

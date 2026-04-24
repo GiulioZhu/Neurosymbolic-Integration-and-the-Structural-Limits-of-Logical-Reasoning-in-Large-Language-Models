@@ -38,7 +38,7 @@ class Constant(BaseModel):
     def getChild(self):
         return []
     
-    # --- CUSTOM ADAPTATION (Giulio Zhu) ---
+    # --- CUSTOM ADAPTATION ---
     # The Z3 generation passes (z3declaration_pass, z3expression_pass) 
     # were injected into ALL node classes to compile the AST into executable Z3 code.
     def z3declaration_pass(self):

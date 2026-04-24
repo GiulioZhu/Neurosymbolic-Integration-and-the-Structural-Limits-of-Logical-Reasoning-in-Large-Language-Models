@@ -77,7 +77,7 @@ STRICT RULES — follow these exactly:
 
 # ── FOLIO: Global Signature Prompt ───────────────────────────────────────────
 
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION  ---
 def get_global_signature_block(k_shots_df: pd.DataFrame) -> str:
     """
     Build a concise predicate-signature block from the k-shot examples.
@@ -152,7 +152,7 @@ def create_improved_prompt(query_nl, k_shots_df, num_examples=10):
 
 # ── LogicNLI: Paradox-Aware Prompt ───────────────────────────────────────────
 
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION ---
 _LOGICNLI_RULES_EXTRA = """\
 7. PARADOX DETECTION: If the premises lead to BOTH hypothesis H and its negation ¬H,
    the correct label is "Paradox". Include Paradox examples in your reasoning.
@@ -236,7 +236,7 @@ def create_logicnli_prompt(hypothesis: str, premise: str,
 
 # ── NSA-LR: Full Chain Translation Prompt ────────────────────────────────────
 
-# --- CUSTOM ADAPTATION (Giulio Zhu) ---
+# --- CUSTOM ADAPTATION ---
 _NSA_LR_CHAIN_INSTRUCTION = """\
 CHAIN TRANSLATION MODE:
 Unlike standard NLI tasks, this reasoning chain contains MULTIPLE intermediate
