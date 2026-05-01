@@ -1,0 +1,2067 @@
+=== [Bin 1] Sample 1 ===
+```python
+formula1 = Predicate('Leads', [Constant('roderickStrong'), Constant('professionalWrestlingStable')])
+formula = End(formula1)
+```
+
+=== [Bin 1] Sample 2 ===
+```python
+formula1 = Predicate('Leads', [Constant('roderickStrong'), Constant('creedBrothers')])
+formula = End(formula1)
+```
+
+=== [Bin 1] Sample 3 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 1] Sample 4 ===
+```python
+formula1 = Predicate('Affection', [Variable('x')])
+formula2 = Predicate('Positive', [Variable('x')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, 'x')
+formula = End(formula4)
+```
+
+=== [Bin 1] Sample 5 ===
+```python
+formula1 = Predicate('German', [Constant('heinrichSchmidt')])
+formula2 = Predicate('Russian', [Constant('heinrichSchmidt')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 1] Sample 6 ===
+```python
+formula1 = Predicate('GermanPolitician', [Variable('x')])
+formula2 = Predicate('PartOfPrussianStateParliament', [Variable('x')])
+formula3 = Predicate('PartOfNaziReichstag', [Variable('x')])
+formula4 = Conjunction(formula2, formula3)
+formula5 = ExistentialQuantification(formula4, 'x')
+formula = End(formula5)
+```
+
+=== [Bin 1] Sample 7 ===
+```python
+formula1 = Predicate('Politician', [Variable('x')])
+formula2 = Predicate('PartOfNaziReichstag', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula5 = UniversalQuantification(formula4, 'x')
+formula = End(formula5)
+```
+
+=== [Bin 1] Sample 8 ===
+```python
+formula1 = Predicate('WorldChampionships', [Constant('worldChampionships')])
+formula2 = Predicate('SportingEvent', [Constant('worldChampionships')])
+formula3 = Equivalence(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 1] Sample 9 ===
+```python
+formula1 = Predicate('SummerOlympics', [Constant('last')])
+formula2 = Predicate('LocatedIn', [Constant('tokyo'), Constant('summerOlympics')])
+formula3 = Negation(formula2)
+formula = End(formula3)
+```
+
+=== [Bin 1] Sample 10 ===
+```python
+formula1 = Predicate('WinMedals', [Constant('unitedStates'), Constant('most')])
+formula2 = Predicate('SummerOlympics', [Constant('last')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 1] Sample 11 ===
+```python
+formula1 = Predicate('FlyFrom', [Constant('susan'), Constant('lgAAirport')])
+formula = End(formula1)
+```
+
+=== [Bin 1] Sample 12 ===
+```python
+formula1 = Predicate('Fly', [Constant('john'), Constant('lgaAirport')])
+formula = End(formula1)
+```
+
+=== [Bin 1] Sample 13 ===
+```python
+formula1 = Predicate('PlayFor', [Constant('ailtonSilva'), Constant('fluminense')])
+formula = End(formula1)
+```
+
+=== [Bin 1] Sample 14 ===
+```python
+formula1 = Predicate('FootballClub', [Variable('x')])
+formula2 = Predicate('LoanedTo', [Constant('ailtonSilva'), Variable('x')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, 'x')
+formula = End(formula4)
+```
+
+=== [Bin 2] Sample 1 ===
+```python
+formula1 = Predicate('Square', [Variable('x')])
+formula2 = Predicate('Shape', [Variable('x')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 2 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('beijing'), Constant('southernChina')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 3 ===
+```python
+formula1 = Predicate('Beijing', [Constant('city')])
+formula2 = Predicate('ChineseCity', [Constant('city')])
+formula3 = Predicate('SecondLargest', [Constant('city')])
+formula4 = Conjunction(formula2, formula3)
+formula5 = Implication(formula1, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 2] Sample 4 ===
+```python
+formula1 = Predicate('Pet', [Variable('x')])
+formula2 = Predicate('Cat', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula = UniversalQuantification(formula4, 'x')
+```
+
+=== [Bin 2] Sample 5 ===
+```python
+formula1 = Predicate('SoccerPlayer', [Constant('robertLewandowski')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 6 ===
+```python
+formula1 = Predicate('PlayFor', [Constant('robertLewandowski'), Constant('bayernMunchen')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 7 ===
+```python
+formula1 = Predicate('Star', [Constant('robertLewandowski')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 8 ===
+```python
+formula1 = Predicate('ScriptEditorForSeries', [Constant('andrewCollins'), Variable('$series')])
+formula2 = Predicate('WorkingTitle', [Variable('$series'), Constant('theSecretDudeSociety')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 9 ===
+```python
+formula1 = Predicate('LanguageGenerationTask', [Constant('machineTranslation')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 10 ===
+```python
+formula1 = Predicate('LanguageUnderstandingTask', [Constant('machineTranslation')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 11 ===
+```python
+formula1 = Predicate('Mammal', [Constant('platypus')])
+formula2 = Predicate('HaveTeeth', [Constant('platypus')])
+formula3 = Negation(formula2)
+formula4 = Conjunction(formula1, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 2] Sample 12 ===
+```python
+formula1 = Predicate('Reptile', [Constant('platypus')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 13 ===
+```python
+formula1 = Predicate('Human', [Variable('$x')])
+formula2 = Predicate('Mammal', [Variable('$x')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 14 ===
+```python
+formula1 = Predicate('Book', [Constant('neapolitanChronicles')])
+formula2 = Predicate('English', [Constant('neapolitanChronicles')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 15 ===
+```python
+formula1 = Predicate('PublishedBy', [Constant('harryPotter'), Constant('newVesselPress')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 16 ===
+```python
+formula1 = Predicate('TranslatedFromItalian', [Constant('palaceOfFlies')])
+formula = End(formula1)
+```
+
+=== [Bin 2] Sample 17 ===
+```python
+formula1 = Predicate('Greek', [Variable('x')])
+formula2 = Predicate('Mortal', [Variable('x')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, 'x')
+formula = End(formula4)
+```
+
+=== [Bin 2] Sample 18 ===
+```python
+formula1 = Predicate('Like', [Constant('george'), Constant('music')])
+formula2 = Predicate('HasAccessToProgram', [Constant('george')])
+formula3 = Predicate('Compose', [Constant('george')])
+formula4 = Implication(Conjunction(formula1, formula2), formula3)
+formula = End(formula4)
+```
+
+=== [Bin 2] Sample 19 ===
+```python
+formula1 = Predicate('Compose', [Constant('george')])
+formula2 = Negation(formula1)
+formula3 = Implication(formula2, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 20 ===
+```python
+formula1 = Predicate('Event', [Variable('x')])
+formula2 = Predicate('Sad', [Variable('x')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 21 ===
+```python
+formula1 = Predicate('Winner', [Constant('steinhauer'), Constant('duMaurierClassic'), Constant('year1992')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 2] Sample 22 ===
+```python
+formula1 = Predicate('InSixWayTie', [Constant('descampe')])
+formula2 = Predicate('Leaderboard', [Constant('duMaurierClassic'), Constant('year1992')])
+formula3 = Predicate('ParticipateIn', [Constant('descampe'), Constant('duMaurierClassic')])
+formula4 = Conjunction(formula1, formula2)
+formula5 = Conjunction(formula3, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 2] Sample 23 ===
+```python
+formula1 = Predicate('PlayFor', [Variable('$x'), Constant('nautico')])
+formula2 = Predicate('Brazilian', [Variable('$x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula5 = UniversalQuantification(formula4, '$x')
+formula = End(formula5)
+```
+
+=== [Bin 2] Sample 24 ===
+```python
+formula1 = Predicate('PlayFor', [Constant('ailtonSilva'), Variable('x')])
+formula2 = Negation(formula1)
+formula3 = ExistentialQuantification(formula2, 'x')
+formula = End(formula3)
+```
+
+=== [Bin 2] Sample 25 ===
+```python
+formula1 = Predicate('LoanTo', [Constant('ailton'), Constant('footballClub')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 3] Sample 1 ===
+```python
+formula1 = Predicate('OcellatedWildTurkey', [Constant('tom')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 2 ===
+```python
+formula1 = Predicate('EasternWildTurkey', [Constant('tom')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 3 ===
+```python
+formula1 = Predicate('WildTurkey', [Constant('joey')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 4 ===
+```python
+formula1 = Predicate('Hosted', [Constant('beijing'), Constant('summerOlympics')])
+formula2 = Predicate('Hosted', [Constant('beijing'), Constant('winterOlympics')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 3] Sample 5 ===
+```python
+formula1 = Predicate('HasVisa', [Constant('mike'), Constant('F1')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 6 ===
+```python
+formula1 = Predicate('HasVisa', [Constant('mike'), Constant('J1')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 7 ===
+```python
+formula1 = Predicate('Pet', [Constant('ted')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 8 ===
+```python
+formula1 = Predicate('Pet', [Constant('ted')])
+formula2 = Predicate('BrownSwissCattle', [Constant('ted')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 3] Sample 9 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement to convert
+
+
+=== [Bin 3] Sample 10 ===
+```python
+formula1 = Predicate('Stock', [Constant('ko')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 11 ===
+```python
+formula1 = Predicate('ContainsKnowledge', [Constant('walden')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 12 ===
+```python
+formula1 = Predicate('SmarterThanBefore', [Constant('harry')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 13 ===
+```python
+formula1 = Predicate('Smart', [Variable('$x')])
+formula2 = Predicate('GainKnowledge', [Variable('$x')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 3] Sample 14 ===
+```python
+formula1 = Predicate('ProvidesFinancialAid', [Constant('ets'), Constant('tom')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 15 ===
+```python
+formula1 = Predicate('CostBelow', [Constant('greTest'), Constant('usDollars300')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 16 ===
+```python
+formula1 = Predicate('Visit', [Constant('juanDeOnate'), Constant('mountainRange')])
+formula2 = Predicate('Location', [Constant('mountainRange'), Constant('newMexico')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 3] Sample 17 ===
+```python
+formula1 = Predicate('Visit', [Constant('juanDeOnate'), Constant('mountainRange'), Constant('texas')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 18 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def ExistentialQuantification(formula: str, variable_symbol: str):
+    return '∃{}({})'.format(variable_symbol, formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 3] Sample 19 ===
+```python
+formula1 = Predicate('Cove', [Variable('x')])
+formula2 = Predicate('Antarctica', [Variable('x')])
+formula3 = Predicate('NamedAfterPlaceInBulgaria', [Variable('x')])
+formula4 = Conjunction(formula2, formula3)
+formula5 = ExistentialQuantification(formula4, 'x')
+formula = End(formula5)
+```
+
+=== [Bin 3] Sample 20 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('barutinCove'), Constant('antarctica')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 3] Sample 21 ===
+```python
+formula1 = Predicate('Sucks', [Constant('space')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 22 ===
+```python
+formula1 = Predicate('Vampire', [Constant('space')])
+formula = End(formula1)
+```
+
+=== [Bin 3] Sample 23 ===
+```python
+formula1 = Predicate('Bird', [Variable('x')])
+formula2 = Predicate('Swim', [Variable('x')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 3] Sample 24 ===
+```python
+formula1 = Predicate('GrumpyPerson', [Constant('tom')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 1 ===
+```python
+formula1 = Predicate('OnTop10List', [Constant('theLegendOfZelda')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 2 ===
+```python
+formula1 = Predicate('OnTop10List', [Constant('theLegendOfZelda')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 4] Sample 3 ===
+```python
+formula1 = Predicate('Share', [Constant('karen'), Constant('strangerThings'), Constant('lisa')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 4 ===
+```python
+formula1 = Predicate('Popular', [Constant('blackMirror')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 5 ===
+```python
+formula1 = Predicate('Share', [Constant('karen'), Constant('blackMirror'), Constant('lisa')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 6 ===
+```python
+formula1 = Predicate('Composer', [Constant('beethoven')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 7 ===
+```python
+formula1 = Predicate('PrintedText', [Constant('year1984')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 8 ===
+```python
+formula1 = Predicate('StreamingService', [Constant('year1984')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 9 ===
+```python
+formula1 = Predicate('StreamingService', [Constant('1984')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 4] Sample 10 ===
+```python
+formula1 = Predicate('BrownSwissCattle', [Constant('ted')])
+formula2 = Predicate('Pet', [Constant('ted')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 4] Sample 11 ===
+```python
+formula1 = Predicate('Stock', [Constant('ko')])
+formula2 = Predicate('GrowthStock', [Constant('ko')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 4] Sample 12 ===
+```python
+formula1 = Predicate('DriedThaiChilies', [Constant('driedThaiChilies')])
+formula2 = Predicate('MalaHotpot', [Constant('malaHotpot')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 4] Sample 13 ===
+```python
+formula1 = Predicate('TakingGRETest', [Variable('x')])
+formula2 = Predicate('FinancialAidProvidedBySomething', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula5 = UniversalQuantification(formula4, 'x')
+formula = End(formula5)
+```
+
+=== [Bin 4] Sample 14 ===
+```python
+formula1 = Predicate('Evergreen', [Variable('x')])
+formula2 = Predicate('ObjectOfWorship', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Conjunction(formula1, formula3)
+formula5 = ExistentialQuantification(formula4, 'x')
+formula = End(formula5)
+```
+
+=== [Bin 4] Sample 15 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('hardingPegmatiteMine'), Constant('mountainRange')])
+formula2 = Predicate('LocatedIn', [Constant('mountainRange'), Constant('newMexico')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Negation(formula3)
+formula = End(formula4)
+```
+
+=== [Bin 4] Sample 16 ===
+```python
+formula1 = Predicate('HouseholdAppliance', [Variable('x')])
+formula2 = Predicate('Sucks', [Variable('x')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 4] Sample 17 ===
+```python
+formula1 = Predicate('OnMondayAt8PM', [Constant('breakingBad')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 18 ===
+```python
+formula1 = Predicate('GrumpyPerson', [Constant('tom')])
+formula2 = Predicate('MeanToAnimals', [Constant('tom')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Negation(formula3)
+formula = End(formula4)
+```
+
+=== [Bin 4] Sample 19 ===
+```python
+formula1 = Predicate('AmericanNational', [Constant('yuri')])
+formula = End(formula1)
+```
+
+=== [Bin 4] Sample 20 ===
+```python
+formula1 = Predicate('American', [Constant('yuri')])
+formula2 = Predicate('ProfessionalBasketballPlayer', [Constant('yuri')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 1 ===
+```python
+formula1 = ExistentialQuantification(Predicate('Animal', [Variable('x')]), 'x')
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 2 ===
+```python
+formula1 = Predicate('MadeBy', [Constant('fifa22'), Constant('japaneseVideoGameCompany')])
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 3 ===
+```python
+formula1 = Predicate('Orchestra', [Variable('x')])
+formula2 = Predicate('PremieredMusicPiece', [Variable('x')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, 'x')
+formula = End(formula4)
+```
+
+=== [Bin 5] Sample 4 ===
+```python
+formula1 = Predicate('Conductor', [Constant('beethoven')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 5] Sample 5 ===
+```python
+formula1 = Predicate('Language', [Constant('basque')])
+formula2 = Predicate('RomanceLanguage', [Constant('basque')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 6 ===
+```python
+formula1 = Predicate('Language', [Constant('german')])
+formula2 = Predicate('RomanceLanguage', [Constant('german')])
+formula3 = Equivalence(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 7 ===
+```python
+formula1 = Predicate('Language', [Constant('french')])
+formula2 = Predicate('IndoEuropean', [Constant('french')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 8 ===
+```python
+from typing import List
+
+# Define the necessary functions
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def Disjunction(formula_a: str, formula_b: str):
+    return '({}) ∨ ({})'.format(formula_a, formula_b)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement
+
+
+=== [Bin 5] Sample 9 ===
+```python
+formula1 = Predicate('LicensePlateStartsWithNumber', [Constant('joesLicensePlate'), Constant('34')])
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 10 ===
+```python
+formula1 = Predicate('LicensePlateFrom', [Constant('tom'), Constant('istanbul')])
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 11 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 5] Sample 12 ===
+```python
+formula1 = Predicate('ProductOf', [Constant('driedThaiChilies'), Constant('bakedByMelissa')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 5] Sample 13 ===
+```python
+formula1 = Predicate('DriedThaiChilies', [Constant('driedThaiChilies')])
+formula2 = Predicate('ProductsOf', [Constant('driedThaiChilies'), Constant('bakedByMelissa')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 14 ===
+```python
+formula1 = Predicate('HarvardWeeklyBookClub', [Variable('x')])
+formula2 = Predicate('LegalObligations', [Variable('x')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 5] Sample 15 ===
+```python
+formula1 = Predicate('RussianFederationOfficial', [Constant('vladimir')])
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 16 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def Disjunction(formula_a: str, formula_b: str):
+    return '({}) ∨ ({})'.format(formula_a, formula_b)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement
+
+
+=== [Bin 5] Sample 17 ===
+```python
+formula1 = Predicate('CanRegisterToVote', [Constant('ekaterina'), Constant('unitedStates')])
+formula2 = Predicate('CanParticipateInPresidentialElection', [Constant('vladimir'), Constant('unitedStates2024')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Negation(formula3)
+formula = End(formula4)
+```
+
+=== [Bin 5] Sample 18 ===
+```python
+from typing import List
+
+# Define the necessary functions from the provided code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 5] Sample 19 ===
+```python
+formula1 = Predicate('KindOf', [Constant('colorectalCancer'), Constant('severeCancer')])
+formula = End(formula1)
+```
+
+=== [Bin 5] Sample 20 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement to convert
+
+
+=== [Bin 5] Sample 21 ===
+```python
+formula1 = Predicate('American', [Constant('yuri')])
+formula2 = Predicate('ProfessionalBasketballPlayer', [Constant('yuri')])
+formula3 = Negation(formula1)
+formula4 = Negation(formula2)
+formula5 = Conjunction(formula3, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 5] Sample 22 ===
+```python
+formula1 = Predicate('LeapStraightIntoAir', [Constant('yuri')])
+formula2 = Negation(formula1)
+formula3 = Predicate('AmericanProfessionalBasketballPlayer', [Constant('yuri')])
+formula4 = Implication(formula2, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 5] Sample 23 ===
+```python
+formula1 = Predicate('AmericanProfessionalBasketballPlayer', [Constant('yuri')])
+formula2 = Negation(formula1)
+formula3 = Predicate('ProfessionalBasketballPlayer', [Constant('yuri')])
+formula4 = Implication(formula2, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 6] Sample 1 ===
+```python
+formula1 = Predicate('GetFlu', [Variable('x')])
+formula2 = Negation(formula1)
+formula3 = UniversalQuantification(formula2, 'x')
+formula = End(formula3)
+```
+
+=== [Bin 6] Sample 2 ===
+```python
+formula1 = Predicate('SymptomsOf', [Constant('monkeypox'), Constant('coughing')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 3 ===
+```python
+formula1 = Predicate('Turtle', [Constant('rockie')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 4 ===
+```python
+formula1 = Predicate('Turtle', [Constant('rockie')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 6] Sample 5 ===
+```python
+formula1 = Predicate('Turtle', [Constant('rockie')])
+formula2 = Predicate('Cute', [Constant('rockie')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 6] Sample 6 ===
+```python
+formula1 = Predicate('Alien', [Constant('marvin')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 7 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 6] Sample 8 ===
+```python
+formula1 = Predicate('LegalObligations', [Constant('harvardWeeklyBookClub')])
+formula2 = Predicate('PrivateCompany', [Constant('harvardWeeklyBookClub')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 6] Sample 9 ===
+```python
+formula1 = Predicate('QueenBee', [Constant('harry')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 10 ===
+```python
+formula1 = Predicate('Invertebrate', [Constant('harry')])
+formula2 = Predicate('QueenBee', [Constant('harry')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 6] Sample 11 ===
+```python
+formula1 = Predicate('UsedToTrainModel', [Constant('supervisedLearning'), Constant('stateOfTheArtTextSummarizationModel')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 12 ===
+```python
+formula1 = Predicate('UsedToTrainModel', [Constant('unsupervisedLearning'), Constant('stateOfTheArtTextSummarizationModel')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 13 ===
+```python
+formula1 = Predicate('RussianFederationOfficial', [Constant('vladimir')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 6] Sample 14 ===
+```python
+formula1 = Predicate('CanParticipateIn', [Constant('ekaterina'), Constant('2024UnitedStatesPresidentialElection')])
+formula2 = Predicate('ManagerAtGazprom', [Constant('vladimir')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 6] Sample 15 ===
+```python
+from typing import List
+
+# Define the necessary functions from the provided code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 6] Sample 16 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def Disjunction(formula_a: str, formula_b: str):
+    return '({}) ∨ ({})'.format(formula_a, formula_b)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement to convert
+
+
+=== [Bin 6] Sample 17 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Disjunction(formula_a: str, formula_b: str):
+    return '({}) ∨ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 6] Sample 18 ===
+```python
+formula1 = Predicate('EatSaladsRegularly', [Constant('taylor')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 19 ===
+```python
+formula1 = Predicate('VisitGym', [Constant('taylor'), Constant('daily')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 20 ===
+```python
+formula1 = Predicate('Human', [Variable('$x')])
+formula2 = Predicate('Horse', [Variable('$x')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, '$x')
+formula = End(formula4)
+```
+
+=== [Bin 6] Sample 21 ===
+```python
+formula1 = Predicate('NovelWriter', [Constant('daniShapiro')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 22 ===
+```python
+formula1 = Predicate('Novel', [Constant('familySecrets')])
+formula = End(formula1)
+```
+
+=== [Bin 6] Sample 23 ===
+```python
+formula1 = Predicate('BornIn', [Constant('daniShapiro'), Constant('boston')])
+formula = End(formula1)
+```
+
+=== [Bin 7] Sample 1 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement to convert
+
+
+=== [Bin 7] Sample 2 ===
+```python
+formula1 = Predicate('Cute', [Constant('rockie')])
+formula2 = Predicate('Calm', [Constant('rockie')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Predicate('SkittishTurtle', [Constant('rockie')])
+formula5 = Implication(formula3, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 7] Sample 3 ===
+```python
+formula1 = Predicate('Human', [Constant('marvin')])
+formula2 = Predicate('FromMars', [Constant('marvin')])
+formula3 = Negation(formula1)
+formula4 = Negation(formula2)
+formula5 = Conjunction(formula3, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 7] Sample 4 ===
+```python
+formula1 = Predicate('From', [Constant('marvin'), Constant('mars')])
+formula2 = Negation(formula1)
+formula3 = Predicate('Human', [Constant('marvin')])
+formula4 = Implication(formula2, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 7] Sample 5 ===
+```python
+formula1 = Predicate('NeedsToEarnMoney', [Constant('hannah')])
+formula2 = Predicate('HelpPayForCollegeTuition', [Constant('hannah')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 7] Sample 6 ===
+```python
+formula1 = Predicate('HarvardWeeklyBookClub', [Variable('x')])
+formula2 = Predicate('PrivateCompany', [Variable('x')])
+formula3 = Predicate('HasLegalObligations', [Variable('x')])
+formula4 = Predicate('CreatedUnderLaw', [Variable('x')])
+formula5 = Implication(formula2, Disjunction(formula3, formula4))
+formula = End(formula5)
+```
+
+=== [Bin 7] Sample 7 ===
+```python
+formula1 = Predicate('HangsOut', [Constant('luke'), Constant('siblings')])
+formula2 = Predicate('PlaysWith', [Constant('luke'), Constant('siblings')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 7] Sample 8 ===
+```python
+formula1 = Predicate('ComplainOften', [Constant('luke'), Constant('annoyingSiblings')])
+formula = End(formula1)
+```
+
+=== [Bin 7] Sample 9 ===
+```python
+formula1 = Predicate('BornInMultipleBirth', [Constant('luke')])
+formula2 = Negation(formula1)
+formula3 = Predicate('ComplainsOftenAboutAnnoyingSiblings', [Constant('luke')])
+formula4 = Negation(formula3)
+formula5 = Conjunction(formula2, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 7] Sample 10 ===
+```python
+formula1 = Predicate('Tidy', [Constant('peter')])
+formula = End(formula1)
+```
+
+=== [Bin 7] Sample 11 ===
+```python
+formula1 = Predicate('RatedGeneralAudience', [Constant('hachiADogsTale')])
+formula = End(formula1)
+```
+
+=== [Bin 7] Sample 12 ===
+```python
+formula1 = Predicate('GrewUpInHealthConsciousChildhoodHome', [Constant('taylor')])
+formula2 = Negation(formula1)
+formula3 = Predicate('VisitGymAtLeastOnceADay', [Constant('taylor')])
+formula4 = Negation(formula3)
+formula5 = Conjunction(formula2, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 8] Sample 1 ===
+```python
+formula1 = Predicate('HasLunch', [Constant('james'), Constant('company')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 2 ===
+```python
+formula1 = Predicate('GrandSlamPlayer', [Constant('cocoGauff')])
+formula2 = Predicate('MostActiveGrandSlamPlayer', [Constant('cocoGauff')])
+formula3 = Implication(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 8] Sample 3 ===
+```python
+formula1 = Predicate('LostTo', [Constant('cocoGauff'), Constant('rafaelNadal')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 4 ===
+```python
+formula1 = Predicate('UniversityEndowment', [Constant('yaleUniversity'), Constant('largest')])
+formula2 = Predicate('Educational Institution', [Constant('yaleUniversity')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 8] Sample 5 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 6 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 7 ===
+```python
+formula1 = Predicate('ProvidesTakeOutService', [Constant('hamdenPlazaSubwayStore')])
+formula2 = Predicate('ReceivesManyNegativeReviews', [Constant('hamdenPlazaSubwayStore')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Predicate('RatingGreaterThan4', [Constant('hamdenPlazaSubwayStore')])
+formula5 = Predicate('DoesNotProvideTakeOutService', [Constant('hamdenPlazaSubwayStore')])
+formula6 = Conjunction(formula4, formula5)
+formula7 = Implication(formula3, formula6)
+formula = End(formula7)
+```
+
+=== [Bin 8] Sample 8 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Disjunction(formula_a: str, formula_b: str):
+    return '({}) ∨ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 9 ===
+```python
+formula1 = Predicate('ProvideTakeOutService', [Constant('hamdenPlazaStore')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 8] Sample 10 ===
+```python
+formula1 = Predicate('Nemesis', [Constant('sirDigby'), Variable('x')])
+formula2 = Predicate('Win', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 8] Sample 11 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 12 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return predicate_name.capitalize() + '(' + ', '.join(terms) + ')'
+
+def Negation(formula: str):
+    return '¬(' + formula + ')'
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '(' + formula_a + ') ∧ (' + formula_b + ')'
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '(' + antecedent_formula + ') → (' + consequent_formula + ')'
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀' + variable_symbol + '(' + formula + ')'
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 13 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 14 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 8] Sample 15 ===
+```python
+formula1 = Predicate('GreatShooter', [Constant('windy')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 16 ===
+```python
+formula1 = Predicate('CanBlockShooting', [Constant('peter'), Constant('windy')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 17 ===
+```python
+formula1 = Predicate('ContainsExcessiveEroticContent', [Constant('hachi')])
+formula2 = Predicate('ContainsViolentContent', [Constant('hachi')])
+formula3 = Predicate('InSeries', [Constant('hachi'), Constant('frozen')])
+formula4 = Disjunction(formula1, formula2)
+formula5 = Disjunction(formula4, formula3)
+formula = End(formula5)
+```
+
+=== [Bin 8] Sample 18 ===
+```python
+formula1 = Predicate('ContainsExcessiveEroticAndViolentContent', [Constant('hachi')])
+formula2 = Predicate('IsAFilmInSeries', [Constant('hachi'), Constant('frozen')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = Negation(formula3)
+formula5 = Nonequivalence(formula3, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 8] Sample 19 ===
+```python
+formula1 = Predicate('Extinct', [Constant('aurochs')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 20 ===
+```python
+formula1 = Predicate('Contains', [Constant('mixture'), Constant('carbon')])
+formula = End(formula1)
+```
+
+=== [Bin 8] Sample 21 ===
+```python
+formula1 = Predicate('Alkane', [Constant('mixture')])
+formula2 = Predicate('ContainsCarbon', [Constant('mixture')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 8] Sample 22 ===
+```python
+formula1 = Predicate('HasPartTimeJob', [Constant('james')])
+formula2 = Predicate('OfferedBy', [Constant('university'), Constant('partTimeJob')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 8] Sample 23 ===
+```python
+formula1 = Predicate('TakeCourse', [Constant('james'), Constant('databaseCourse')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 1 ===
+```python
+formula1 = Predicate('PerformsInSchoolTalentShows', [Constant('bonnie')])
+formula2 = Predicate('Often', [Constant('bonnie')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 2 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return predicate_name.capitalize() + '(' + ', '.join(terms) + ')'
+
+def Negation(formula: str):
+    return '¬(' + formula + ')'
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '(' + formula_a + ') ∧ (' + formula_b + ')'
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '(' + antecedent_formula + ') → (' + consequent_formula + ')'
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀' + variable_symbol + '(' + formula + ')'
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 9] Sample 3 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 9] Sample 4 ===
+```python
+formula1 = Predicate('HasLunch', [Constant('james'), Constant('company')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 9] Sample 5 ===
+```python
+from typing import List
+
+# Define the necessary functions
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement
+
+
+=== [Bin 9] Sample 6 ===
+```python
+formula1 = Predicate('GrandSlamChampion', [Constant('djokovic')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 7 ===
+```python
+formula1 = Predicate('LiveIn', [Constant('djokovic'), Constant('taxHaven')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 8 ===
+```python
+formula1 = Predicate('LiveIn', [Constant('djokovic'), Constant('taxHaven')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 9] Sample 9 ===
+```python
+formula1 = Predicate('DesignBy', [Constant('max')])
+formula2 = Predicate('BrutalistBuilding', [Constant('design')])
+formula3 = Equivalence(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 10 ===
+```python
+formula1 = Predicate('Design', [Variable('x')])
+formula2 = Predicate('Evocative', [Variable('x')])
+formula3 = Predicate('Dreamy', [Variable('x')])
+formula4 = Conjunction(formula2, formula3)
+formula5 = Implication(formula1, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 9] Sample 11 ===
+```python
+formula1 = Predicate('Design', [Variable('x')])
+formula2 = Predicate('Evocative', [Variable('x')])
+formula3 = Predicate('Dreamy', [Variable('x')])
+formula4 = Disjunction(formula2, formula3)
+formula5 = Predicate('ByMax', [Variable('x')])
+formula6 = Conjunction(formula4, formula5)
+formula = End(formula6)
+```
+
+=== [Bin 9] Sample 12 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 9] Sample 13 ===
+```python
+formula1 = Predicate('FavoriteSeason', [Constant('james'), Constant('summer')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 14 ===
+```python
+formula1 = Predicate('FavoriteSeason', [Constant('mia'), Constant('spring')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 15 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('butte'), Constant('state')])
+formula2 = Predicate('LocatedIn', [Constant('stPierre'), Constant('state')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 16 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('stPierre'), Constant('state')])
+formula2 = Predicate('LocatedIn', [Constant('bismarck'), Constant('state')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 17 ===
+```python
+formula1 = Predicate('LocatedIn', [Constant('missoula'), Constant('montana')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 18 ===
+```python
+formula1 = Predicate('PrivateIvyLeagueResearchUniversity', [Variable('x')])
+formula2 = Predicate('MovedTo', [Variable('x'), Constant('newHaven')])
+formula3 = Conjunction(formula1, formula2)
+formula4 = ExistentialQuantification(formula3, 'x')
+formula = End(formula4)
+```
+
+=== [Bin 9] Sample 19 ===
+```python
+formula1 = Predicate('ResidentialCollege', [Constant('piersonCollege')])
+formula2 = Predicate('Yale', [Constant('piersonCollege')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 20 ===
+```python
+formula1 = Predicate('WillRentApartment', [Constant('tom'), Constant('theOliveGarden')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 21 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+# Natural language statement to convert
+
+
+=== [Bin 9] Sample 22 ===
+```python
+formula1 = Predicate('SecurityDepositAt', [Constant('oliveGarden'), Constant('amount2000')])
+formula2 = Predicate('MoreThan', [Constant('amount2000'), Constant('amount')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 23 ===
+```python
+formula1 = Predicate('Car', [Constant('john')])
+formula2 = Predicate('TeslaModel3', [Constant('john')])
+formula3 = Equality(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 24 ===
+```python
+formula1 = Predicate('Car', [Constant('johnsCar')])
+formula2 = Predicate('SoloEV', [Constant('johnsCar')])
+formula3 = Conjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 25 ===
+```python
+formula1 = Predicate('Car', [Constant('johnsCar')])
+formula2 = Predicate('SoloEV', [Constant('johnsCar')])
+formula3 = Negation(formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 26 ===
+```python
+formula1 = Predicate('Monkey', [Constant('rock')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 27 ===
+```python
+Predicate('RockHasWings', [])
+```
+
+=== [Bin 9] Sample 28 ===
+```python
+formula1 = Predicate('Rock', [Variable('x')])
+formula2 = Predicate('HaveWings', [Variable('x')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 9] Sample 29 ===
+```python
+formula1 = Predicate('FamilySize', [Constant('john'), Variable('$x')])
+formula2 = Predicate('FamilySize', [Constant('john'), Variable('$y')])
+formula3 = GreaterThan(Variable('$x'), Variable('$y'))
+formula4 = Implication(formula1, formula3)
+formula5 = Implication(formula2, formula3)
+formula6 = Conjunction(formula4, formula5)
+formula = End(formula6)
+```
+
+=== [Bin 9] Sample 30 ===
+```python
+formula1 = Predicate('HaveFamily', [Constant('john')])
+formula2 = Predicate('Size', [Constant('john'), Constant('larger')])
+formula3 = Negation(formula2)
+formula4 = Implication(formula1, formula3)
+formula = End(formula4)
+```
+
+=== [Bin 9] Sample 31 ===
+```python
+formula1 = Predicate('Engaged', [Constant('john')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 32 ===
+```python
+formula1 = Predicate('HasFamily', [Constant('john')])
+formula2 = Negation(formula1)
+formula3 = Predicate('InviteOthersToWedding', [Constant('john')])
+formula4 = Negation(formula3)
+formula5 = Conjunction(formula2, formula4)
+formula = End(formula5)
+```
+
+=== [Bin 9] Sample 33 ===
+```python
+formula1 = Predicate('HeckCattle', [Variable('x')])
+formula2 = Predicate('ArtificiallySelected', [Variable('x')])
+formula3 = ExistentialQuantification(Conjunction(formula1, formula2), 'x')
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 34 ===
+```python
+from typing import List
+
+# Define the necessary functions from the given code snippet
+def Constant(constant_name: str):
+    return constant_name.lower()
+
+def Variable(variable_name: str):
+    return '$' + variable_name
+
+def Predicate(predicate_name: str, terms: List[str]):
+    return '{}({})'.format(predicate_name.capitalize(), ', '.join(terms))
+
+def Negation(formula: str):
+    return '¬({})'.format(formula)
+
+def Conjunction(formula_a: str, formula_b: str):
+    return '({}) ∧ ({})'.format(formula_a, formula_b)
+
+def Implication(antecedent_formula: str, consequent_formula: str):
+    return '({}) → ({})'.format(antecedent_formula, consequent_formula)
+
+def UniversalQuantification(formula: str, variable_symbol: str):
+    return '∀{}({})'.format(variable_symbol, formula)
+
+def End(formula: str):
+    return formula
+
+# Natural language statement to convert
+
+
+=== [Bin 9] Sample 35 ===
+```python
+formula1 = Predicate('HavePartTimeJobOfferedByUniversity', [Constant('james')])
+formula2 = Negation(formula1)
+formula = End(formula2)
+```
+
+=== [Bin 9] Sample 36 ===
+```python
+formula1 = Predicate('TakesDatabaseCourse', [Constant('james')])
+formula2 = Predicate('HasPartTimeJobOfferedByUniversity', [Constant('james')])
+formula3 = Disjunction(formula1, formula2)
+formula = End(formula3)
+```
+
+=== [Bin 9] Sample 37 ===
+```python
+formula1 = Predicate('Terricolous', [Constant('kiKi')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 38 ===
+```python
+formula1 = Predicate('Bark', [Constant('kiKi')])
+formula = End(formula1)
+```
+
+=== [Bin 9] Sample 39 ===
+```python
+formula1 = Predicate('DoesNotBark', [Constant('kiKi')])
+formula2 = Predicate('Dog', [Constant('kiKi')])
+formula3 = Negation(formula2)
+formula4 = Conjunction(formula1, formula3)
+formula = End(formula4)
+```
+

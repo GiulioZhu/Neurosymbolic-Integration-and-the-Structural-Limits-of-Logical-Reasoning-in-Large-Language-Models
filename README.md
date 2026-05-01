@@ -81,7 +81,7 @@ $$LoCM(\phi) = \sqrt{\sum_{o \in \mathcal{O}} \omega(o)\,freq(o, \phi) + \gamma\
 ### Prerequisites
 
 ```bash
-# Python ≥ 3.9, all deps installed in venv
+# Python ≥ 3.12, all deps installed in venv
 pip install -r requirements.txt
 ```
 

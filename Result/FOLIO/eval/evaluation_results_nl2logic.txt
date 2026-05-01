@@ -2,94 +2,1267 @@ NL2LOGIC Evaluation — dataset=folio, model=Qwen/Qwen2.5-Coder-7B-Instruct-AWQ
 ============================================================
 
 [Bin 1] Result 1:
-  NL:          Roderick Strong leads a professional wrestling stable.
-  Generated:   ERROR: Connection error.
+  NL:          Some affection is positive.
+  Generated:   True
+  Ground Truth:Unknown
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 2:
+  NL:          The world championships is a sporting event.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 3:
+  NL:          John flies to LGA airport.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 4:
+  NL:          Susan flies from LGA airport.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 5:
+  NL:          The last summer Olympic games were not in Tokyo.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 6:
+  NL:          The United States won the most medals in the last summer Olympic games.
+  Generated:   Unknown
   Ground Truth:True
-  Match: False  |  Method: error
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 7:
+  NL:          Roderick Strong leads the Creed Brothers.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 8:
+  NL:          Roderick Strong leads a professional wrestling stable.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 9:
+  NL:          Imperium doesn't have a feud with a professional wrestling stable that includes Ivy Nile.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 10:
+  NL:          Ailton Silva played for Fluminense.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 11:
+  NL:          Heinrich Schmidt was German or Russian or both.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 12:
+  NL:          No politicians are part of the Nazi Reichstag.
+  Generated:   False
+  Ground Truth:False
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 13:
+  NL:          Ailton Silva was loaned out to a football club.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 1] Result 14:
+  NL:          Some German politician was part of both the Prussian State Parliament and the Nazi Reichstag.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 1: 0.0%  (0/1, 1 errors)
+Bin 1: 35.7%  (5/14, 0 errors)
 ============================================================
 
 [Bin 2] Result 1:
-  NL:          All squares are shapes.
-  Generated:   ERROR: Connection error.
+  NL:          All events are sad.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 2:
+  NL:          Some Greeks are mortal.
+  Generated:   True
+  Ground Truth:Unknown
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 3:
+  NL:          Andrew Collins was the script editor for a series with the working title "The Secret Dude Society".
+  Generated:   Unknown
   Ground Truth:True
-  Match: False  |  Method: error
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 4:
+  NL:          Platypuses are reptiles.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 5:
+  NL:          No pets are cats.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 6:
+  NL:          Humans are mammals.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 7:
+  NL:          Platypuses are mammals with no teeth.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 8:
+  NL:          Robert Lewandowski is a soccer player.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 9:
+  NL:          Robert Lewandowski is a star.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 10:
+  NL:          All squares are shapes.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 11:
+  NL:          Ailton Silva does not play for a football club.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 12:
+  NL:          Robert Lewandowski plays for Bayern Munchen.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 13:
+  NL:          Ailton was not loaned out to a football club.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 14:
+  NL:          No one playing for Nautico is Brazilian.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 15:
+  NL:          Palace of Flies was translated from Italian.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 16:
+  NL:          Harry Potter was published by New Vessel Press.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 17:
+  NL:          Neapolitan Chronicles is an English book.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 18:
+  NL:          Machine translation is a language generation task.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 19:
+  NL:          Machine translation is a language understanding task.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 20:
+  NL:          If George will not compose, George can not compose.
+  Generated:   True
+  Ground Truth:Unknown
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 21:
+  NL:          Descampe is in the six-way tie in the leaderboard of the 1992 du Maurier Classic.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 22:
+  NL:          Steinhauer was not the winner of the 1992 du Maurier Classic.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 23:
+  NL:          If George likes music and has access to a program, he will compose.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 24:
+  NL:          Beijing is located in southern China.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 2] Result 25:
+  NL:          Beijing is the second largest Chinese city.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 2: 0.0%  (0/1, 1 errors)
+Bin 2: 44.0%  (11/25, 0 errors)
 ============================================================
 
 [Bin 3] Result 1:
-  NL:          Tom is an Ocellated wild turkey.
-  Generated:   ERROR: Connection error.
+  NL:          All birds swim.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 2:
+  NL:          Space sucks.
+  Generated:   Unknown
   Ground Truth:True
-  Match: False  |  Method: error
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 3:
+  NL:          Space is a vampire.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 4:
+  NL:          Juan de Onate visited a mountain range in Texas.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 5:
+  NL:          Juan de Onate visited a mountain range in New Mexico.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 6:
+  NL:          No members of Pappy's have starred in a show piloting on BBC Two or BBC Three.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 7:
+  NL:          Walden contains knowledge.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 8:
+  NL:          Harry is smarter than before.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 9:
+  NL:          A smarter person has gained knowledge.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 10:
+  NL:          Mike has an F1 visa.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 11:
+  NL:          Mike has a J1 visa.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 12:
+  NL:          Tom is an Eastern wild turkey.
+  Generated:   False
+  Ground Truth:False
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 13:
+  NL:          Joey is a wild turkey.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 14:
+  NL:          Tom is an Ocellated wild turkey.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 15:
+  NL:          Barutin Cove is not located in Antarctica.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 16:
+  NL:          Ted is a pet.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 17:
+  NL:          Barutin Cove is named after all islands in Antarctica.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 18:
+  NL:          There is at least one cove in Antarctica named after a place in Bulgaria.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 19:
+  NL:          KO is a stock.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 20:
+  NL:          Tom is a grumpy person.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 21:
+  NL:          Ted is a pet and Brown Swiss cattle
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 22:
+  NL:          Beijing hosted both the 2008 Summer Olympics and the Winter Olympics.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 23:
+  NL:          ETS provides financial aid to Tom.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 3] Result 24:
+  NL:          It costs below US $300 to take the GRE test.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 3: 0.0%  (0/1, 1 errors)
+Bin 3: 50.0%  (12/24, 0 errors)
 ============================================================
 
 [Bin 4] Result 1:
+  NL:          If something is a household appliance, it sucks.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 2:
+  NL:          The Harding Pegmatite Mine is not located in a mountain range in New Mexico.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 3:
   NL:          The Legend of Zelda is on the Top 10 list.
-  Generated:   ERROR: Connection error.
+  Generated:   Unknown
   Ground Truth:True
-  Match: False  |  Method: error
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 4:
+  NL:          Some evergreens are not objects of worship.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 5:
+  NL:          Beethoven is a composer.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 6:
+  NL:          The Legend of Zelda is not on the Top 10 list.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 7:
+  NL:          1984 is not a streaming service.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 8:
+  NL:          1984 is printed text.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 9:
+  NL:          1984 is a streaming service.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 10:
+  NL:          Dried Thai chilies are a mala hotpot.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 11:
+  NL:          Breaking Bad is on Monday at 8 pm.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 12:
+  NL:          If Ted is a Brown Swiss cattle, then Ted is not a pet.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 13:
+  NL:          KO is a stock and a growth stock.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 14:
+  NL:          "Black Mirror" is popular.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 15:
+  NL:          Yuri is an American national.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 16:
+  NL:          Yuri is an American professional basketball player.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 17:
+  NL:          Karen will share "Black Mirror" with Lisa.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 18:
+  NL:          Karen will share "Stranger Things" with Lisa.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 19:
+  NL:          Tom is not both a grumpy person and mean to animals.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 4] Result 20:
+  NL:          No one taking the GRE test has financial aid provided to them by something.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 4: 0.0%  (0/1, 1 errors)
+Bin 4: 30.0%  (6/20, 0 errors)
 ============================================================
 
 [Bin 5] Result 1:
-  NL:          There is an animal.
-  Generated:   ERROR: Connection error.
+  NL:          FIFA 22 is made by a Japanese video game company.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 2:
+  NL:          Beethoven is not a conductor.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 3:
+  NL:          Some orchestras premiered music pieces.
+  Generated:   Unknown
   Ground Truth:True
-  Match: False  |  Method: error
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 4:
+  NL:          Tom's license plate is from Istanbul.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 5:
+  NL:          Joe's license plate begins with the number 34.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 6:
+  NL:          Colorectal cancer is a kind of severe cancer
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 7:
+  NL:          There is an animal.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 8:
+  NL:          Dried Thai chilies are products of Baked by Melissa.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 9:
+  NL:          Dried Thai chilies are not products of Baked by Melissa.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 10:
+  NL:          Breaking Bad is a TV show in which roses are given out on Monday at 8 pm.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 11:
+  NL:          Dried Thai chilies are cupcakes and products of Baked by Melissa.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 12:
+  NL:          Yuri is not an American professional basketball player.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 13:
+  NL:          Basque is a Romance language.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 14:
+  NL:          German is a Romance language.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 15:
+  NL:          French is an Indo-European language.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 16:
+  NL:          The Harvard Weekly Book club has legal obligations.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 17:
+  NL:          If Yuri is not an American professional basketball player, then Yuri is a professional basketball player.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 18:
+  NL:          If Yuri does not leap straight into the air, then Yuri is an American professional basketball player.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 19:
+  NL:          If KO is a growth stock or bought to earn profits from rapid price appreciation, then KO is neither a stock nor is its price volatile.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 20:
+  NL:          If Tom is not both a grumpy person and mean to animals, then Tom is neither a grumpy person nor an animal lover.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 21:
+  NL:          Vladimir is a Russian federation official
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 22:
+  NL:          Ekaterina can participate in the 2024 United States presidential election or is a manager at Gazprom.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 5] Result 23:
+  NL:          It is not true that Ekaterina can register to vote in the United States and Vladimir can participate in the 2024 United States presidential election.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 5: 0.0%  (0/1, 1 errors)
+Bin 5: 34.8%  (8/23, 0 errors)
 ============================================================
 
 [Bin 6] Result 1:
+  NL:          Some humans are horses.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 2:
+  NL:          Harry is a queen bee.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 3:
+  NL:          Supervised learning is used to train the state-of-the-art text summarization model.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 4:
+  NL:          Symptoms of Monkeypox include coughing.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 5:
+  NL:          Unsupervised learning is used to train the state-of-the-art text summarization model.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 6:
+  NL:          Harry is an invertebrate or a queen bee.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 7:
   NL:          No one gets the flu.
-  Generated:   ERROR: Connection error.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 8:
+  NL:          Dani Shapiro was born in Boston.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 9:
+  NL:          Taylor visits the gym at least once a day.
+  Generated:   ERROR: 1 validation error for BinaryOperator
+operator
+  Input should be 'And', 'Or', 'If', 'OnlyIf' or 'IfAndOnlyIf' [type=literal_error, input_value='Not', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+  Ground Truth:False
+  Match: False  |  Method: error
+----------------------------------------
+[Bin 6] Result 10:
+  NL:          Family Secrets is a novel.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 11:
+  NL:          Taylor eats salads regularly.
+  Generated:   ERROR: 1 validation error for BinaryOperator
+operator
+  Input should be 'And', 'Or', 'If', 'OnlyIf' or 'IfAndOnlyIf' [type=literal_error, input_value='Not', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
   Ground Truth:Unknown
   Match: False  |  Method: error
 ----------------------------------------
+[Bin 6] Result 12:
+  NL:          Dani Shapiro is a novel writer.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 13:
+  NL:          Dried Thai chilies are neither products of Baked by Melissa nor baked sweets.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 14:
+  NL:          If roses are given out during Breaking Bad, then it is on Monday at 8 pm.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 15:
+  NL:          Colorectal cancer is a form of Cholangiocarcinoma and it is a kind of mild flu or a kind of bile duct cancer, or all of the above.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 16:
+  NL:          Rockie is a turtle.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 17:
+  NL:          The Harvard Weekly Book club has legal obligations and is a private company.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 18:
+  NL:          If colorectal cancer is a kind of bile duct cancer or a form of Cholangiocarcinoma, then colorectal cancer is a kind of bile duct cancer and a kind of mild flu.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 19:
+  NL:          Rockie is not a turtle.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 20:
+  NL:          Rockie is a turtle or cute.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 21:
+  NL:          Marvin is an alien.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 22:
+  NL:          Vladimir is not a Russian federation official
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 6] Result 23:
+  NL:          Ekaterina can participate in the 2024 United States presidential election or Vladimir is a manager at Gazprom.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
 
-Bin 6: 0.0%  (0/1, 1 errors)
+Bin 6: 34.8%  (8/23, 2 errors)
 ============================================================
 
 [Bin 7] Result 1:
-  NL:          If Rockie is not both a turtle and a squirrel, then Rockie is either cute or skittish.
-  Generated:   ERROR: Connection error.
+  NL:          Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.
+  Generated:   ERROR: 1 validation error for BinaryOperator
+operator
+  Input should be 'And', 'Or', 'If', 'OnlyIf' or 'IfAndOnlyIf' [type=literal_error, input_value='Not', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
   Ground Truth:True
   Match: False  |  Method: error
 ----------------------------------------
+[Bin 7] Result 2:
+  NL:          If the Harvard Weekly Book club is a private company, then it either has legal obligations or is created under law.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 3:
+  NL:          If Rockie is cute and calm, then Rockie is a skittish turtle.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 4:
+  NL:          If Marvin is not from Mars, then Marvin is a human.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 5:
+  NL:          Marvin is neither a human nor from Mars.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 6:
+  NL:          "Hachi: A dog's Tale" is rated General Audience.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 7:
+  NL:          If Rockie is not both a turtle and a squirrel, then Rockie is either cute or skittish.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 8:
+  NL:          Luke complains often about annoying siblings.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 9:
+  NL:          Luke spends a lot of time hanging out and playing with his siblings.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 10:
+  NL:          Luke is neither born in a multiple birth nor complains often about annoying siblings.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 11:
+  NL:          Hannah needs to earn money to help pay for her college tuition.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 7] Result 12:
+  NL:          Peter is notably tidy.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
 
-Bin 7: 0.0%  (0/1, 1 errors)
+Bin 7: 41.7%  (5/12, 1 errors)
 ============================================================
 
 [Bin 8] Result 1:
-  NL:          James has lunch in the company.
-  Generated:   ERROR: Connection error.
+  NL:          Yale University has the largest university endowment of any educational institution.
+  Generated:   Unknown
   Ground Truth:Unknown
-  Match: False  |  Method: error
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 2:
+  NL:          Aurochs are extinct.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 3:
+  NL:          The Hamden Plaza store does not provide take-out service.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 4:
+  NL:          Sir Digby’s nemesis does not win.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 5:
+  NL:          The mixture contains carbon.
+  Generated:   True
+  Ground Truth:Unknown
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 6:
+  NL:          The Hamden Plaza Subway store provides take-out service or does not receive many negative reviews.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 7:
+  NL:          If Harry is either both a vertebrate and an animal with a backbone, or neither a vertebrate nor an animal with a backbone, then Harry is neither an invertebrate nor a queen bee.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 8:
+  NL:          The mixture is an alkane and contains carbon.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 9:
+  NL:          James takes the database course.
+  Generated:   False
+  Ground Truth:Unknown
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 10:
+  NL:          James has a part-time job offered by the university.
+  Generated:   False
+  Ground Truth:False
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 11:
+  NL:          Windy is a great shooter.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 12:
+  NL:          Peter can block Windy's shooting.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 13:
+  NL:          If the Hamden Plaza Subway store provides take-out service and receives many negative reviews, then its rating is greater than 4 and it does not provide take-out service.
+  Generated:   True
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 14:
+  NL:          Peter is shorter than a man in Michael's class.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 15:
+  NL:          James has lunch in the company.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 16:
+  NL:          Coco Gauff is among the most active Grand-Slam players.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 17:
+  NL:          Coco Gauff has lost to Rafael Nadal.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 18:
+  NL:          "Hachi: A dog's Tale" contains excessive erotic and violent content or is in the "Frozen" series or both.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 19:
+  NL:          "Hachi: A dog's Tale" either contains excessive erotic and violent content and is a film in the "Frozen" series, or it neither contains excessive erotic and violent content nor is a film in the "Frozen" series.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 20:
+  NL:          Peter is either a  clumsy foodie who goes out frequently to find new food restaurants to try or he is someone whose family prioritizes order and spotlessness.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 21:
+  NL:          Peter is either both a clumsy foodie who goes out frequently to find new food restaurants to try and issomeone whose family prioritizes order and spotlessness, or he neither is a clumsy foodie who goes out frequently to find new food restaurants to try nor does his family prioritize order and spotlessness.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 22:
+  NL:          Hannah is at Mary's school and she is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 8] Result 23:
+  NL:          Hannah is at Mary's school and she either is not a picky eater or, if she is, then she spends a lot of her time eating and catching up with friends in the campus dining halls.
+  Generated:   False
+  Ground Truth:False
+  Match: True  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 8: 0.0%  (0/1, 1 errors)
+Bin 8: 34.8%  (8/23, 0 errors)
 ============================================================
 
 [Bin 9] Result 1:
-  NL:          Bonnie performs in school talent shows often.
-  Generated:   ERROR: Connection error.
+  NL:          Pierson College is a residential college at Yale.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 2:
+  NL:          A private Ivy League research university moved to New Haven.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 3:
+  NL:          Some Heck cattle are artificially selected.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 4:
+  NL:          James's favorite season is summer.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 5:
+  NL:          Mia's favorite season is spring.
+  Generated:   Unknown
   Ground Truth:Unknown
-  Match: False  |  Method: error
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 6:
+  NL:          Butte and St Pierre are in the same state.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 7:
+  NL:          Montana is home to the city of Missoula.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 8:
+  NL:          John's car is a Tesla Model 3.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 9:
+  NL:          John's car is a Solo EV.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 10:
+  NL:          John's car is not a Solo EV.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 11:
+  NL:          St Pierre and Bismarck are in the same state.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 12:
+  NL:          Rock has wings.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 13:
+  NL:          Rock is a monkey.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 14:
+  NL:          KiKi is terricolous.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 15:
+  NL:          Rock does not have wings.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 16:
+  NL:          KiKi is a barking dog.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 17:
+  NL:          A design by Max is a brutalist building.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 18:
+  NL:          John is engaged.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 19:
+  NL:          KiKi does not bark and he is not a dog.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 20:
+  NL:          John has a larger family.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 21:
+  NL:          A design by Max is either evocative or dreamy.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 22:
+  NL:          James does not have a part-time job offered by the university.
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 23:
+  NL:          A design by Max is evocative and dreamy.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 24:
+  NL:          John does not have a larger family.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 25:
+  NL:          Tom will rent an apartment in The Olive Garden.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 26:
+  NL:          The security deposit at the Olive Garden is either $2000 or more.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 27:
+  NL:          Tom is allowed to move into an apartment in The Olive Garden with Fluffy.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 28:
+  NL:          James does not have lunch in the company.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 29:
+  NL:          John neither has a larger family nor does he invite others to his wedding.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 30:
+  NL:          If the mixture contains only one element or contains carbon, then the mixture is neither a chemical compound nor an alkane.
+  Generated:   False
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 31:
+  NL:          James either takes the database course or has a part-time job offered by the university.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 32:
+  NL:          Coco Gauff is not both a player who lost to Iga Świątek at Roland Garros 2022 and one of the most active players in major tennis.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 33:
+  NL:          Djokovic is a Grand Slam champion.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 34:
+  NL:          Djokovic lives in a tax haven.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 35:
+  NL:          Bonnie performs in school talent shows often.
+  Generated:   Unknown
+  Ground Truth:Unknown
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 36:
+  NL:          Djokovic does not live in a tax haven.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 37:
+  NL:          If James is either a manager or in other countries,  then James does not either has lunch at home or work remotely from home. If James either has lunch at home or works remotely from home, then he is neither a manager nor does he work in other countries. [contrapositive is more natural]
+  Generated:   True
+  Ground Truth:True
+  Match: True  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 38:
+  NL:          If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.
+  Generated:   Unknown
+  Ground Truth:False
+  Match: False  |  Method: z3_entailment
+----------------------------------------
+[Bin 9] Result 39:
+  NL:          If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.
+  Generated:   Unknown
+  Ground Truth:True
+  Match: False  |  Method: z3_entailment
 ----------------------------------------
 
-Bin 9: 0.0%  (0/1, 1 errors)
+Bin 9: 33.3%  (13/39, 0 errors)
 ============================================================
 
 
-Overall Accuracy: 0.0%  (0/9)
+Overall Accuracy: 37.4%  (76/203)

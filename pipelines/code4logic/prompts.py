@@ -11,12 +11,12 @@ import inspect
 import re
 from typing import List
 import pandas as pd
-from basis_functions import (
+from .basis_functions import (
     Constant, Variable, Function, Predicate, Equal, NonEqual, 
     Negation, Conjunction, Disjunction, Implication, Equivalence, 
     Nonequivalence, ExistentialQuantification, UniversalQuantification, End
 )
-from fol_grammar import FolGrammarParser
+from .fol_grammar import FolGrammarParser
 
 # --- ORIGINAL IMPLEMENTATION (Liu, 2025) ---
 # Base code generation and prompt rules

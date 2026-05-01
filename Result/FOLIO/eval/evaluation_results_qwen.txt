@@ -1,0 +1,1259 @@
+CODE4LOGIC (Qwen/Qwen2.5-Coder-7B-Instruct-AWQ) — Bin-Stratified Evaluation
+============================================================
+
+[Bin 1] Sample 1:
+  NL:          Roderick Strong leads a professional wrestling stable.
+  Generated:   Leads(roderickstrong, professionalwrestlingstable)
+  Ground Truth:∃x (Leads(roderickstrong, x) ∧ ProfessionalWrestlingStable(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 2:
+  NL:          Roderick Strong leads the Creed Brothers.
+  Generated:   Leads(roderickstrong, creedbrothers)
+  Ground Truth:Leads(roderickstrong, creedbrothers)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 3:
+  NL:          Imperium doesn't have a feud with a professional wrestling stable that includes Ivy Nile.
+  Generated:   Error
+  Ground Truth:∀x ((ProfessionalWrestlingStable(x) ∧ Includes(x, ivynile)) → ¬Feuds(imperium, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 4:
+  NL:          Some affection is positive.
+  Generated:   ∃x((Affection(x)) ∧ (Positive(x)))
+  Ground Truth:∃x (Affection(x) ∧ Positive(x))
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 5:
+  NL:          Heinrich Schmidt was German or Russian or both.
+  Generated:   (German(heinrichschmidt)) ∨ (Russian(heinrichschmidt))
+  Ground Truth:German(heinrichSchmidt) ∨ Russian(heinrichSchmidt)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 6:
+  NL:          Some German politician was part of both the Prussian State Parliament and the Nazi Reichstag.
+  Generated:   ∃x((Partofprussianstateparliament(x)) ∧ (Partofnazireichstag(x)))
+  Ground Truth:∃x (German(x) ∧ Politician(x) ∧ Member(x, prussianStateParliament) ∧ Member(x, naziReichstag))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 7:
+  NL:          No politicians are part of the Nazi Reichstag.
+  Generated:   ∀x((Politician(x)) → (¬(Partofnazireichstag(x))))
+  Ground Truth:∀x (Politician(x) → ¬Member(x, naziReichstag))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 8:
+  NL:          The world championships is a sporting event.
+  Generated:   (Worldchampionships(worldchampionships)) ↔ (Sportingevent(worldchampionships))
+  Ground Truth:SportingEvent(champs)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 9:
+  NL:          The last summer Olympic games were not in Tokyo.
+  Generated:   ¬(Locatedin(tokyo, summerolympics))
+  Ground Truth:¬LastSummerOlympics(tokyo)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 10:
+  NL:          The United States won the most medals in the last summer Olympic games.
+  Generated:   (Winmedals(unitedstates, most)) ∧ (Summerolympics(last))
+  Ground Truth:∃x (LastSummerOlympics(x) ∧ MostMedals(unitedStates, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 11:
+  NL:          Susan flies from LGA airport.
+  Generated:   Flyfrom(susan, lgaairport)
+  Ground Truth:FlyFrom(susan, lgaAirport)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 12:
+  NL:          John flies to LGA airport.
+  Generated:   Fly(john, lgaairport)
+  Ground Truth:FlyTo(john, lgaAirport)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 13:
+  NL:          Ailton Silva played for Fluminense.
+  Generated:   Playfor(ailtonsilva, fluminense)
+  Ground Truth:PlayFor(ailtonSilva, fluminense)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 1] Sample 14:
+  NL:          Ailton Silva was loaned out to a football club.
+  Generated:   ∃x((Footballclub(x)) ∧ (Loanedto(ailtonsilva, x)))
+  Ground Truth:∃x (FootballClub(x) ∧ LoanedTo(ailtonSilva, x))
+  Match: True  |  Method: z3
+----------------------------------------
+
+Bin 1: 42.9%  (6/14)
+============================================================
+
+[Bin 2] Sample 1:
+  NL:          All squares are shapes.
+  Generated:   (Square(x)) → (Shape(x))
+  Ground Truth:∀x (Square(x) → Shape(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 2:
+  NL:          Beijing is located in southern China.
+  Generated:   Locatedin(beijing, southernchina)
+  Ground Truth:LocatedIn(beijing, southernChina)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 3:
+  NL:          Beijing is the second largest Chinese city.
+  Generated:   (Beijing(city)) → ((Chinesecity(city)) ∧ (Secondlargest(city)))
+  Ground Truth:SecondLargestChineseCity(beijing)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 4:
+  NL:          No pets are cats.
+  Generated:   ∀x((Pet(x)) → (¬(Cat(x))))
+  Ground Truth:∀x (Pet(x) → ¬Cat(x))
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 5:
+  NL:          Robert Lewandowski is a soccer player.
+  Generated:   Soccerplayer(robertlewandowski)
+  Ground Truth:SoccerPlayer(robertLewandowski)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 6:
+  NL:          Robert Lewandowski plays for Bayern Munchen.
+  Generated:   Playfor(robertlewandowski, bayernmunchen)
+  Ground Truth:PlaysFor(robertLewandowski, bayernMunchen)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 7:
+  NL:          Robert Lewandowski is a star.
+  Generated:   Star(robertlewandowski)
+  Ground Truth:SoccerStar(robertLewandowski)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 8:
+  NL:          Andrew Collins was the script editor for a series with the working title "The Secret Dude Society".
+  Generated:   (Scripteditorforseries(andrewcollins, $series)) ∧ (Workingtitle($series, thesecretdudesociety))
+  Ground Truth:∃x (ScriptEditorFor(andrewCollins, x) ∧ Series(x) ∧ WorkingTitle(theSecretDudeSociety, x))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 2] Sample 9:
+  NL:          Machine translation is a language generation task.
+  Generated:   Languagegenerationtask(machinetranslation)
+  Ground Truth:LanguageGenerationTask(machineTranslation)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 10:
+  NL:          Machine translation is a language understanding task.
+  Generated:   Languageunderstandingtask(machinetranslation)
+  Ground Truth:LanguageUnderstandingTask(machineTranslation)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 11:
+  NL:          Platypuses are mammals with no teeth.
+  Generated:   (Mammal(platypus)) ∧ (¬(Haveteeth(platypus)))
+  Ground Truth:Mammal(platypus) ∧ (¬Have(platypus, teeth))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 12:
+  NL:          Platypuses are reptiles.
+  Generated:   Reptile(platypus)
+  Ground Truth:Reptile(platypus)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 13:
+  NL:          Humans are mammals.
+  Generated:   (Human($x)) → (Mammal($x))
+  Ground Truth:Mammal(humans)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 2] Sample 14:
+  NL:          Neapolitan Chronicles is an English book.
+  Generated:   (Book(neapolitanchronicles)) ∧ (English(neapolitanchronicles))
+  Ground Truth:Book(neapolitanChronicles) ∧ In(neapolitanChronicles, english)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 15:
+  NL:          Harry Potter was published by New Vessel Press.
+  Generated:   Publishedby(harrypotter, newvesselpress)
+  Ground Truth:PublishedBy(harryPotter, newVesselPress)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 16:
+  NL:          Palace of Flies was translated from Italian.
+  Generated:   Translatedfromitalian(palaceofflies)
+  Ground Truth:TranslatedFrom(palaceOfFlies, italian)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 17:
+  NL:          Some Greeks are mortal.
+  Generated:   ∃x((Greek(x)) ∧ (Mortal(x)))
+  Ground Truth:∃x ∃y (Greek(x) ∧ Greek(y) ∧ Mortal(x) ∧ Mortal(y) ∧ ¬(x=y))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 2] Sample 18:
+  NL:          If George likes music and has access to a program, he will compose.
+  Generated:   ((Like(george, music)) ∧ (Hasaccesstoprogram(george))) → (Compose(george))
+  Ground Truth:(LikeMusic(george) ∧ AccesstoProgram(george)) → WillCompose(george)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 19:
+  NL:          If George will not compose, George can not compose.
+  Generated:   (¬(Compose(george))) → (¬(Compose(george)))
+  Ground Truth:¬WantToCompose(george) → ¬WillCompose(george)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 20:
+  NL:          All events are sad.
+  Generated:   (Event(x)) → (Sad(x))
+  Ground Truth:∀x (Event(x) → Sad(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 21:
+  NL:          Steinhauer was not the winner of the 1992 du Maurier Classic.
+  Generated:   ¬(Winner(steinhauer, dumaurierclassic, year1992))
+  Ground Truth:¬WinnerOf(steinhauer, duMaurierClassic, year1992)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 22:
+  NL:          Descampe is in the six-way tie in the leaderboard of the 1992 du Maurier Classic.
+  Generated:   (Participatein(descampe, dumaurierclassic)) ∧ ((Insixwaytie(descampe)) ∧ (Leaderboard(dumaurierclassic, year1992)))
+  Ground Truth:SixWayTie(descampe)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 23:
+  NL:          No one playing for Nautico is Brazilian.
+  Generated:   ∀$x((Playfor($x, nautico)) → (¬(Brazilian($x))))
+  Ground Truth:∀x (PlayFor(x, nautico) → ¬Brazilian(x))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 2] Sample 24:
+  NL:          Ailton Silva does not play for a football club.
+  Generated:   ∃x(¬(Playfor(ailtonsilva, x)))
+  Ground Truth:∀x (FootballClub(x) → ¬PlayFor(ailtonSilva, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 2] Sample 25:
+  NL:          Ailton was not loaned out to a football club.
+  Generated:   ¬(Loanto(ailton, footballclub))
+  Ground Truth:∀x (FootballClub(x) → ¬LoanedTo(ailton, x))
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 2: 28.0%  (7/25)
+============================================================
+
+[Bin 3] Sample 1:
+  NL:          Tom is an Ocellated wild turkey.
+  Generated:   Ocellatedwildturkey(tom)
+  Ground Truth:OcellatedWildTurkey(tom)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 2:
+  NL:          Tom is an Eastern wild turkey.
+  Generated:   Easternwildturkey(tom)
+  Ground Truth:EasternWildTurkey(tom)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 3:
+  NL:          Joey is a wild turkey.
+  Generated:   Wildturkey(joey)
+  Ground Truth:WildTurkey(joey)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 4:
+  NL:          Beijing hosted both the 2008 Summer Olympics and the Winter Olympics.
+  Generated:   (Hosted(beijing, summerolympics)) ∧ (Hosted(beijing, winterolympics))
+  Ground Truth:Hosted(beijing, summerOlympics) ∧ Hosted(beijing, winterOlympics)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 5:
+  NL:          Mike has an F1 visa.
+  Generated:   Hasvisa(mike, f1)
+  Ground Truth:F1Visa(mike)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 6:
+  NL:          Mike has a J1 visa.
+  Generated:   Hasvisa(mike, j1)
+  Ground Truth:J1Visa(mike)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 7:
+  NL:          Ted is a pet.
+  Generated:   Pet(ted)
+  Ground Truth:Pet(ted)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 8:
+  NL:          Ted is a pet and Brown Swiss cattle
+  Generated:   (Pet(ted)) ∧ (Brownswisscattle(ted))
+  Ground Truth:Pet(ted) ∧ BrownSwissCattle(ted)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 9:
+  NL:          No members of Pappy's have starred in a show piloting on BBC Two or BBC Three.
+  Generated:   Error
+  Ground Truth:∀x ∀y (MemberOf(x, pappys) ∧ Starring(y, x) → ¬(PilotedOn(y, bBCTwo) ∨ PilotedOn(y, bBCThree)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 10:
+  NL:          KO is a stock.
+  Generated:   Stock(ko)
+  Ground Truth:Stock(kO)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 11:
+  NL:          Walden contains knowledge.
+  Generated:   Containsknowledge(walden)
+  Ground Truth:Gains(harry, knowledge)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 12:
+  NL:          Harry is smarter than before.
+  Generated:   Smarterthanbefore(harry)
+  Ground Truth:Smarter(harry)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 13:
+  NL:          A smarter person has gained knowledge.
+  Generated:   (Smart($x)) ∧ (Gainknowledge($x))
+  Ground Truth:∀x (Smarter(x) → GainKnowledge(x))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 3] Sample 14:
+  NL:          ETS provides financial aid to Tom.
+  Generated:   Providesfinancialaid(ets, tom)
+  Ground Truth:ProvidesFinancialAidTo(eTS, tom)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 15:
+  NL:          It costs below US $300 to take the GRE test.
+  Generated:   Costbelow(gretest, usdollars300)
+  Ground Truth:Cost(gRE, x) ∧ Cheaper(x, 300)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 3] Sample 16:
+  NL:          Juan de Onate visited a mountain range in New Mexico.
+  Generated:   (Visit(juandeonate, mountainrange)) ∧ (Location(mountainrange, newmexico))
+  Ground Truth:∃x (Visited(juanDeOnate, x) ∧ MountainRange(x) ∧ In(x, newMexico))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 17:
+  NL:          Juan de Onate visited a mountain range in Texas.
+  Generated:   Visit(juandeonate, mountainrange, texas)
+  Ground Truth:∃x (Visited(juanDeOnate, x) ∧ MountainRange(x) ∧ In(x, texas))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 18:
+  NL:          Barutin Cove is named after all islands in Antarctica.
+  Generated:   Error
+  Ground Truth:∀x (LocatedIn(x, antarctica) → NamedAfter(barutinCove, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 19:
+  NL:          There is at least one cove in Antarctica named after a place in Bulgaria.
+  Generated:   ∃x((Antarctica(x)) ∧ (Namedafterplaceinbulgaria(x)))
+  Ground Truth:∃x ∃y (Cove(x) ∧ LocatedIn(x, antarctica) ∧ NameAfter(x, y) ∧ LocatedIn(y, bulgaria))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 20:
+  NL:          Barutin Cove is not located in Antarctica.
+  Generated:   ¬(Locatedin(barutincove, antarctica))
+  Ground Truth:¬LocatedIn(barutinCove, antarctica)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 21:
+  NL:          Space sucks.
+  Generated:   Sucks(space)
+  Ground Truth:Suck(space)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 22:
+  NL:          Space is a vampire.
+  Generated:   Vampire(space)
+  Ground Truth:Vampire(space)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 23:
+  NL:          All birds swim.
+  Generated:   (Bird(x)) → (Swim(x))
+  Ground Truth:∀x (Bird(x) → Swim(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 3] Sample 24:
+  NL:          Tom is a grumpy person.
+  Generated:   Grumpyperson(tom)
+  Ground Truth:Grumpy(tom)
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 3: 37.5%  (9/24)
+============================================================
+
+[Bin 4] Sample 1:
+  NL:          The Legend of Zelda is on the Top 10 list.
+  Generated:   Ontop10list(thelegendofzelda)
+  Ground Truth:Top10(thelegendofzelda)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 2:
+  NL:          The Legend of Zelda is not on the Top 10 list.
+  Generated:   ¬(Ontop10list(thelegendofzelda))
+  Ground Truth:¬Top10(thelegendofzelda)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 3:
+  NL:          Karen will share "Stranger Things" with Lisa.
+  Generated:   Share(karen, strangerthings, lisa)
+  Ground Truth:ShareWith(karen, strangerThings, lisa)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 4:
+  NL:          "Black Mirror" is popular.
+  Generated:   Popular(blackmirror)
+  Ground Truth:Popular(blackMirror)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 5:
+  NL:          Karen will share "Black Mirror" with Lisa.
+  Generated:   Share(karen, blackmirror, lisa)
+  Ground Truth:ShareWith(karen, blackMirror, lisa)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 6:
+  NL:          Beethoven is a composer.
+  Generated:   Composer(beethoven)
+  Ground Truth:Composer(beethoven)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 7:
+  NL:          1984 is printed text.
+  Generated:   Printedtext(year1984)
+  Ground Truth:PrintedText(y1984)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 8:
+  NL:          1984 is a streaming service.
+  Generated:   Streamingservice(year1984)
+  Ground Truth:StreamingService(y1984)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 9:
+  NL:          1984 is not a streaming service.
+  Generated:   ¬(Streamingservice(1984))
+  Ground Truth:¬StreamingService(y1984)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 4] Sample 10:
+  NL:          If Ted is a Brown Swiss cattle, then Ted is not a pet.
+  Generated:   (Brownswisscattle(ted)) → (¬(Pet(ted)))
+  Ground Truth:BrownSwissCattle(ted) → ¬Pet(ted)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 11:
+  NL:          KO is a stock and a growth stock.
+  Generated:   (Stock(ko)) ∧ (Growthstock(ko))
+  Ground Truth:¬GrowthStock(kO)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 12:
+  NL:          Dried Thai chilies are a mala hotpot.
+  Generated:   (Driedthaichilies(driedthaichilies)) ∨ (Malahotpot(malahotpot))
+  Ground Truth:MalaHotpot(driedThaiChili)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 13:
+  NL:          No one taking the GRE test has financial aid provided to them by something.
+  Generated:   ∀x((Takinggretest(x)) → (¬(Financialaidprovidedbysomething(x))))
+  Ground Truth:¬(∃x ∃y (Applicant(x, gRE) ∧ ProvidesFinancialAidTo(y, x)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 14:
+  NL:          Some evergreens are not objects of worship.
+  Generated:   ∃x((Evergreen(x)) ∧ (¬(Objectofworship(x))))
+  Ground Truth:∃x ∃y (Evergreen(x) ∧ Evergreen(y) ∧ ¬ObjectOfWorship(x) ∧ ¬ObjectOfWorship(y) ∧ ¬(x=y))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 4] Sample 15:
+  NL:          The Harding Pegmatite Mine is not located in a mountain range in New Mexico.
+  Generated:   ¬((Locatedin(hardingpegmatitemine, mountainrange)) ∧ (Locatedin(mountainrange, newmexico)))
+  Ground Truth:∀x (In(hardingPegmatiteMine, x) → ¬(MountainRange(x) ∧ In(x, newMexico)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 16:
+  NL:          If something is a household appliance, it sucks.
+  Generated:   (Householdappliance(x)) → (Sucks(x))
+  Ground Truth:∀x (HouseHoldApp(x) → Suck(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 17:
+  NL:          Breaking Bad is on Monday at 8 pm.
+  Generated:   Onmondayat8pm(breakingbad)
+  Ground Truth:∀x (MondayAt8PM(x) ∧ On(breakingBad, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 18:
+  NL:          Tom is not both a grumpy person and mean to animals.
+  Generated:   ¬((Grumpyperson(tom)) ∧ (Meantoanimals(tom)))
+  Ground Truth:¬(Grumpy(tom) ∧ MeanTo(tom, animal))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 19:
+  NL:          Yuri is an American national.
+  Generated:   Americannational(yuri)
+  Ground Truth:AmericanNational(yuri)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 4] Sample 20:
+  NL:          Yuri is an American professional basketball player.
+  Generated:   (American(yuri)) ∧ (Professionalbasketballplayer(yuri))
+  Ground Truth:AmericanNational(yuri) ∧ Professional(yuri) ∧ BasketballPlayer(yuri)
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 4: 20.0%  (4/20)
+============================================================
+
+[Bin 5] Sample 1:
+  NL:          There is an animal.
+  Generated:   ∃x(Animal(x))
+  Ground Truth:∃x (Animal(x))
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 2:
+  NL:          FIFA 22 is made by a Japanese video game company.
+  Generated:   Madeby(fifa22, japanesevideogamecompany)
+  Ground Truth:∃x(Created(x, fifa22) ∧ Japanese(x) ∧ VideoGameCompany(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 3:
+  NL:          Some orchestras premiered music pieces.
+  Generated:   ∃x((Orchestra(x)) ∧ (Premieredmusicpiece(x)))
+  Ground Truth:∃x ∃y (Orchestra(x) ∧ MusicPiece(y) ∧ Premiered(x, y))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 4:
+  NL:          Beethoven is not a conductor.
+  Generated:   ¬(Conductor(beethoven))
+  Ground Truth:¬Conductor(beethoven)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 5:
+  NL:          Basque is a Romance language.
+  Generated:   (Language(basque)) → (Romancelanguage(basque))
+  Ground Truth:RomanceLanguage(basque)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 6:
+  NL:          German is a Romance language.
+  Generated:   (Language(german)) ↔ (Romancelanguage(german))
+  Ground Truth:RomanceLanguage(german)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 7:
+  NL:          French is an Indo-European language.
+  Generated:   (Language(french)) ∧ (Indoeuropean(french))
+  Ground Truth:IndoEuropeanLanguage(french)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 8:
+  NL:          If KO is a growth stock or bought to earn profits from rapid price appreciation, then KO is neither a stock nor is its price volatile.
+  Generated:   Error
+  Ground Truth:GrowthStock(kO) ∨ BoughtToEarnProfitFrom(kO, earnProfit, rapidPriceAppreciation) → ¬Stock(kO) ∧ ¬BoughtToEarnProfitFrom(kO, rapidPriceAppreciation)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 9:
+  NL:          Joe's license plate begins with the number 34.
+  Generated:   Licenseplatestartswithnumber(joeslicenseplate, 34)
+  Ground Truth:∃x (Owns(joe, x) ∧ BeginWith(x, num34))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 5] Sample 10:
+  NL:          Tom's license plate is from Istanbul.
+  Generated:   Licenseplatefrom(tom, istanbul)
+  Ground Truth:∃x (Owns(tom, x) ∧ VehicleRegistrationPlateIn(x, istanbul))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 11:
+  NL:          Dried Thai chilies are products of Baked by Melissa.
+  Generated:   Error
+  Ground Truth:Product(driedThaiChili) ∧ From(driedThaiChili, bakedByMelissa)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 12:
+  NL:          Dried Thai chilies are not products of Baked by Melissa.
+  Generated:   ¬(Productof(driedthaichilies, bakedbymelissa))
+  Ground Truth:¬(Product(driedThaiChili) ∧ From(driedThaiChili, bakedByMelissa))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 13:
+  NL:          Dried Thai chilies are cupcakes and products of Baked by Melissa.
+  Generated:   (Driedthaichilies(driedthaichilies)) ∧ (Productsof(driedthaichilies, bakedbymelissa))
+  Ground Truth:Cupcake(driedThaiChili) ∧ Product(driedThaiChili) ∧ From(driedThaiChili, bakedByMelissa)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 14:
+  NL:          The Harvard Weekly Book club has legal obligations.
+  Generated:   (Harvardweeklybookclub(x)) ∧ (Legalobligations(x))
+  Ground Truth:LegalObligation(harvardWeeklyBookClub)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 15:
+  NL:          Vladimir is a Russian federation official
+  Generated:   Russianfederationofficial(vladimir)
+  Ground Truth:Russian(vladimir) ∧ FederationOfficial(vladimir)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 16:
+  NL:          Ekaterina can participate in the 2024 United States presidential election or is a manager at Gazprom.
+  Generated:   Error
+  Ground Truth:CanParticipateIn(ekaterina, 2024UnitedStatesElection) ∨ ManagerAt(ekaterina, gazprom)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 5] Sample 17:
+  NL:          It is not true that Ekaterina can register to vote in the United States and Vladimir can participate in the 2024 United States presidential election.
+  Generated:   ¬((Canregistertovote(ekaterina, unitedstates)) ∧ (Canparticipateinpresidentialelection(vladimir, unitedstates2024)))
+  Ground Truth:CanRegisterToVoteIn(ekaterina, unitedStates) ∧ CanParticipateIn(vladimir, 2024UnitedStatesElection)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 5] Sample 18:
+  NL:          Breaking Bad is a TV show in which roses are given out on Monday at 8 pm.
+  Generated:   Error
+  Ground Truth:∀x ∀y (MondayAt8PM(x) ∧ Rose(y) ∧ GivenOutOn(y, tv) ∧ On(tv, x) ∧ From(y, breakingBad))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 19:
+  NL:          Colorectal cancer is a kind of severe cancer
+  Generated:   Kindof(colorectalcancer, severecancer)
+  Ground Truth:SevereCancer(colorectalCancer)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 20:
+  NL:          If Tom is not both a grumpy person and mean to animals, then Tom is neither a grumpy person nor an animal lover.
+  Generated:   Error
+  Ground Truth:¬(Grumpy(tom) ∧ MeanTo(tom, animal)) → ¬Grumpy(tom) ∧ ¬AnimalLover(tom))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 5] Sample 21:
+  NL:          Yuri is not an American professional basketball player.
+  Generated:   (¬(American(yuri))) ∧ (¬(Professionalbasketballplayer(yuri)))
+  Ground Truth:¬(AmericanNational(yuri) ∧ Professional(yuri) ∧ BasketballPlayer(yuri))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 22:
+  NL:          If Yuri does not leap straight into the air, then Yuri is an American professional basketball player.
+  Generated:   (¬(Leapstraightintoair(yuri))) → (Americanprofessionalbasketballplayer(yuri))
+  Ground Truth:¬LeapStraightIntoAir(yuri) → (AmericanNational(yuri) ∧ Professional(yuri) ∧ BasketballPlayer(yuri))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 5] Sample 23:
+  NL:          If Yuri is not an American professional basketball player, then Yuri is a professional basketball player.
+  Generated:   (¬(Americanprofessionalbasketballplayer(yuri))) → (Professionalbasketballplayer(yuri))
+  Ground Truth:¬(AmericanNational(yuri) ∧ Professional(yuri) ∧ BasketballPlayer(yuri)) → (Professional(yuri) ∧ BasketballPlayer(yuri))
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 5: 8.7%  (2/23)
+============================================================
+
+[Bin 6] Sample 1:
+  NL:          No one gets the flu.
+  Generated:   ∀x(¬(Getflu(x)))
+  Ground Truth:∀x (Human(x) → ¬Get(x, flu))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 2:
+  NL:          Symptoms of Monkeypox include coughing.
+  Generated:   Symptomsof(monkeypox, coughing)
+  Ground Truth:∃x (SymptonOf(x, monkeypoxVirus) ∧ Coughing(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 3:
+  NL:          Rockie is a turtle.
+  Generated:   Turtle(rockie)
+  Ground Truth:Turtle(rockie)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 4:
+  NL:          Rockie is not a turtle.
+  Generated:   ¬(Turtle(rockie))
+  Ground Truth:¬Turtle(rockie)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 5:
+  NL:          Rockie is a turtle or cute.
+  Generated:   (Turtle(rockie)) ∨ (Cute(rockie))
+  Ground Truth:Turtle(rockie) ∨ Cute(rockie)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 6:
+  NL:          Marvin is an alien.
+  Generated:   Alien(marvin)
+  Ground Truth:Alien(marvin)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 7:
+  NL:          Dried Thai chilies are neither products of Baked by Melissa nor baked sweets.
+  Generated:   Error
+  Ground Truth:¬(Product(driedThaiChili) ∧ From(driedThaiChili, bakedByMelissa)) ∧ ¬BakedSweet(driedThaiChili)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 8:
+  NL:          The Harvard Weekly Book club has legal obligations and is a private company.
+  Generated:   (Legalobligations(harvardweeklybookclub)) ∧ (Privatecompany(harvardweeklybookclub))
+  Ground Truth:LegalObligation(harvardWeeklyBookClub) ∧ PrivateCompany(harvardWeeklyBookClub)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 9:
+  NL:          Harry is a queen bee.
+  Generated:   Queenbee(harry)
+  Ground Truth:QueenBee(harry)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 10:
+  NL:          Harry is an invertebrate or a queen bee.
+  Generated:   (Invertebrate(harry)) ∨ (Queenbee(harry))
+  Ground Truth:Invertebrate(harry) ∨ QueenBee(harry)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 11:
+  NL:          Supervised learning is used to train the state-of-the-art text summarization model.
+  Generated:   Usedtotrainmodel(supervisedlearning, stateofthearttextsummarizationmodel)
+  Ground Truth:∃x (SupervisedLearningAlgorithm(x) ∧ TrainedWith(stateOfTheArtTextSummarizationModel, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 12:
+  NL:          Unsupervised learning is used to train the state-of-the-art text summarization model.
+  Generated:   Usedtotrainmodel(unsupervisedlearning, stateofthearttextsummarizationmodel)
+  Ground Truth:∃x (UnsupervisedLearningAlgorithm(x) ∧ TrainedWith(stateOfTheArtTextSummarizationModel, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 13:
+  NL:          Vladimir is not a Russian federation official
+  Generated:   ¬(Russianfederationofficial(vladimir))
+  Ground Truth:¬(Russian(vladimir) ∧ FederationOfficial(vladimir))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 14:
+  NL:          Ekaterina can participate in the 2024 United States presidential election or Vladimir is a manager at Gazprom.
+  Generated:   (Canparticipatein(ekaterina, 2024unitedstatespresidentialelection)) ∨ (Manageratgazprom(vladimir))
+  Ground Truth:CanParticipateIn(ekaterina, 2024UnitedStatesElection) ⊕ ManagerAt(vladimir, gazprom)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 6] Sample 15:
+  NL:          If roses are given out during Breaking Bad, then it is on Monday at 8 pm.
+  Generated:   Error
+  Ground Truth:∀x ∀y ((Rose(y) ∧ GivenOutOn(y, tv) ∧ On(tv, x) ∧ From(y, breakingBad)) → MondayAt8PM(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 16:
+  NL:          If colorectal cancer is a kind of bile duct cancer or a form of Cholangiocarcinoma, then colorectal cancer is a kind of bile duct cancer and a kind of mild flu.
+  Generated:   Error
+  Ground Truth:¬(BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer)) ∨ (BileDuctCancer(colorectalCancer) ∧ MildFlu(colorectalCancer))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 17:
+  NL:          Colorectal cancer is a form of Cholangiocarcinoma and it is a kind of mild flu or a kind of bile duct cancer, or all of the above.
+  Generated:   Error
+  Ground Truth:Cholangiocarcinoma(colorectalCancer) ∧ (MildFlu(colorectalCancer) ∨ BileDuctCancer(colorectalCancer))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 18:
+  NL:          Taylor eats salads regularly.
+  Generated:   Eatsaladsregularly(taylor)
+  Ground Truth:RegularlyEat(taylor, salad)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 19:
+  NL:          Taylor visits the gym at least once a day.
+  Generated:   Visitgym(taylor, daily)
+  Ground Truth:VisitDaily(taylor, gym)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 20:
+  NL:          Some humans are horses.
+  Generated:   ∃$x((Human($x)) ∧ (Horse($x)))
+  Ground Truth:∃x (Human(x) ∧ Human(y) ∧ Horse(x) ∧ Horse(y) ∧ ¬(x=y))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 6] Sample 21:
+  NL:          Dani Shapiro is a novel writer.
+  Generated:   Novelwriter(danishapiro)
+  Ground Truth:WritesNovel(dani_Shapiro)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 22:
+  NL:          Family Secrets is a novel.
+  Generated:   Novel(familysecrets)
+  Ground Truth:IsNovel(family_Secrets)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 6] Sample 23:
+  NL:          Dani Shapiro was born in Boston.
+  Generated:   Bornin(danishapiro, boston)
+  Ground Truth:BornIn(dani_Shapiro, boston)
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 6: 26.1%  (6/23)
+============================================================
+
+[Bin 7] Sample 1:
+  NL:          If Rockie is not both a turtle and a squirrel, then Rockie is either cute or skittish.
+  Generated:   Error
+  Ground Truth:¬(Turtle(rockie) ∧ Squirrel(rockie)) → Cute(rockie) ⊕ Skittish(rockie)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 2:
+  NL:          If Rockie is cute and calm, then Rockie is a skittish turtle.
+  Generated:   ((Cute(rockie)) ∧ (Calm(rockie))) → (Skittishturtle(rockie))
+  Ground Truth:Cute(rockie) ∧ Calm(rockie) → Turtle(rockie) ∧ Skittish(rockie)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 3:
+  NL:          Marvin is neither a human nor from Mars.
+  Generated:   (¬(Human(marvin))) ∧ (¬(Frommars(marvin)))
+  Ground Truth:¬Human(marvin) ∧ ¬From(marvin, mars)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 4:
+  NL:          If Marvin is not from Mars, then Marvin is a human.
+  Generated:   (¬(From(marvin, mars))) → (Human(marvin))
+  Ground Truth:¬From(marvin, mars) → Human(marvin)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 5:
+  NL:          Hannah needs to earn money to help pay for her college tuition.
+  Generated:   (Needstoearnmoney(hannah)) ∧ (Helppayforcollegetuition(hannah))
+  Ground Truth:NeedToEarnMoneyToHelpPayFor(hannah, collegeTuition)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 6:
+  NL:          If the Harvard Weekly Book club is a private company, then it either has legal obligations or is created under law.
+  Generated:   (Privatecompany(x)) → ((Haslegalobligations(x)) ∨ (Createdunderlaw(x)))
+  Ground Truth:PrivateCompany(harvardWeeklyBookClub) → LegalObligation(harvardWeeklyBookClub) ⊕ CreatedUnderLaw(harvardWeeklyBookClub)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 7:
+  NL:          Luke spends a lot of time hanging out and playing with his siblings.
+  Generated:   (Hangsout(luke, siblings)) ∧ (Playswith(luke, siblings))
+  Ground Truth:SpendTime(luke, playingWith, siblings)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 8:
+  NL:          Luke complains often about annoying siblings.
+  Generated:   Complainoften(luke, annoyingsiblings)
+  Ground Truth:ComplainAboutOften(luke, annoyingSiblings)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 9:
+  NL:          Luke is neither born in a multiple birth nor complains often about annoying siblings.
+  Generated:   (¬(Borninmultiplebirth(luke))) ∧ (¬(Complainsoftenaboutannoyingsiblings(luke)))
+  Ground Truth:¬(BornIn(luke, multipleBirth) ∨ ComplainAbout(luke, often, annoyingSiblings) )
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 10:
+  NL:          Peter is notably tidy.
+  Generated:   Tidy(peter)
+  Ground Truth:NotablyTidy(peter)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 11:
+  NL:          "Hachi: A dog's Tale" is rated General Audience.
+  Generated:   Ratedgeneralaudience(hachiadogstale)
+  Ground Truth:Rated(x, generalAudience)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 7] Sample 12:
+  NL:          Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.
+  Generated:   (¬(Grewupinhealthconsciouschildhoodhome(taylor))) ∧ (¬(Visitgymatleastonceaday(taylor)))
+  Ground Truth:¬GrowUpIn(taylor, health-consciousChildhoodHome) ∧ ¬VisitDaily(taylor, gym))
+  Match: False  |  Method: string_match
+----------------------------------------
+
+Bin 7: 8.3%  (1/12)
+============================================================
+
+[Bin 8] Sample 1:
+  NL:          James has lunch in the company.
+  Generated:   Haslunch(james, company)
+  Ground Truth:HasLunch(james, company)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 2:
+  NL:          Coco Gauff is among the most active Grand-Slam players.
+  Generated:   (Grandslamplayer(cocogauff)) → (Mostactivegrandslamplayer(cocogauff))
+  Ground Truth:MostActivePlayerIn(cocoGauff, majorTennis)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 3:
+  NL:          Coco Gauff has lost to Rafael Nadal.
+  Generated:   Lostto(cocogauff, rafaelnadal)
+  Ground Truth:LostTo(cocoGauff, świątek) ∧ At(cocoGauff, rolandGarros2022)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 8] Sample 4:
+  NL:          Yale University has the largest university endowment of any educational institution.
+  Generated:   (Universityendowment(yaleuniversity, largest)) ∧ (Educational institution(yaleuniversity))
+  Ground Truth:LargestUniversityEndowmentOf(yale, anyEducationalInstitution)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 8] Sample 5:
+  NL:          Hannah is at Mary's school and she is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.
+  Generated:   Error
+  Ground Truth:¬(PickyEater(hannah) ∧ Spend(hannah, aLotOfTime, eating) ∧ Spend(hannah, aLotOfTime, catchingUpWithFriends, diningHall))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 6:
+  NL:          Hannah is at Mary's school and she either is not a picky eater or, if she is, then she spends a lot of her time eating and catching up with friends in the campus dining halls.
+  Generated:   Error
+  Ground Truth:PickyEater(hannah) ⊕ (Spend(hannah, aLotOfTime, eating) ∧ Spend(hannah, aLotOfTime, catchingUpWithFriends, diningHall))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 7:
+  NL:          If the Hamden Plaza Subway store provides take-out service and receives many negative reviews, then its rating is greater than 4 and it does not provide take-out service.
+  Generated:   ((Providestakeoutservice(hamdenplazasubwaystore)) ∧ (Receivesmanynegativereviews(hamdenplazasubwaystore))) → ((Ratinggreaterthan4(hamdenplazasubwaystore)) ∧ (Doesnotprovidetakeoutservice(hamdenplazasubwaystore)))
+  Ground Truth:∃x ((TakeOutService(hamdenPlazaSubway) ∧ NegativeReview(x) ∧ Receive(hamdenPlazaSubway, x) → PopularAmong(hamdenPlazaSubway, localResidents) ∧ ¬Provide(hamdenPlazaSubway, takeOutService))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 8] Sample 8:
+  NL:          The Hamden Plaza Subway store provides take-out service or does not receive many negative reviews.
+  Generated:   Error
+  Ground Truth:∃x (Provide(hamdenPlazaSubway, takeOutService) ∨ (NegativeReview(x) ∧ ¬Receive(hamdenPlazaSubway, x)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 9:
+  NL:          The Hamden Plaza store does not provide take-out service.
+  Generated:   ¬(Providetakeoutservice(hamdenplazastore))
+  Ground Truth:¬Provide(hamdenPlazaSubway, takeOutService)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 10:
+  NL:          Sir Digby’s nemesis does not win.
+  Generated:   (Nemesis(sirdigby, x)) → (¬(Win(x)))
+  Ground Truth:¬Win(sirDigbysNemesis)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 11:
+  NL:          If Harry is either both a vertebrate and an animal with a backbone, or neither a vertebrate nor an animal with a backbone, then Harry is neither an invertebrate nor a queen bee.
+  Generated:   Error
+  Ground Truth:¬(Invertebrate(harry) ⊕ With(harry, backbone)) → ¬Invertebrate(harry) ∧ ¬QueenBee(harry)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 12:
+  NL:          Peter is either a  clumsy foodie who goes out frequently to find new food restaurants to try or he is someone whose family prioritizes order and spotlessness.
+  Generated:   Error
+  Ground Truth:ClumsyFoodie(peter) ∨ (∃y (FamilyOf(y, peter) ∧ Prioritize(y, order) ∧ Prioritize(y, spotlessness)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 13:
+  NL:          Peter is either both a clumsy foodie who goes out frequently to find new food restaurants to try and issomeone whose family prioritizes order and spotlessness, or he neither is a clumsy foodie who goes out frequently to find new food restaurants to try nor does his family prioritize order and spotlessness.
+  Generated:   Error
+  Ground Truth:¬(ClumsyFoodie(peter) ⊕ (∃y (FamilyOf(y, peter) ∧ Prioritize(y, order) ∧ Prioritize(y, spotlessness))))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 14:
+  NL:          Peter is shorter than a man in Michael's class.
+  Generated:   Error
+  Ground Truth:∃x (Man(x) ∧ SameClass(x, michael) ∧ ¬Taller(peter, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 15:
+  NL:          Windy is a great shooter.
+  Generated:   Greatshooter(windy)
+  Ground Truth:GreatShooter(windy)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 16:
+  NL:          Peter can block Windy's shooting.
+  Generated:   Canblockshooting(peter, windy)
+  Ground Truth:CanBlock(peter, windy)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 17:
+  NL:          "Hachi: A dog's Tale" contains excessive erotic and violent content or is in the "Frozen" series or both.
+  Generated:   ((Containsexcessiveeroticcontent(hachi)) ∨ (Containsviolentcontent(hachi))) ∨ (Inseries(hachi, frozen))
+  Ground Truth:(Contain(x, excessiveEroticContent) ∧ Contain(x, excessiveViolentContent)) ∨ InfrozenSeries(excessiveViolentContent)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 18:
+  NL:          "Hachi: A dog's Tale" either contains excessive erotic and violent content and is a film in the "Frozen" series, or it neither contains excessive erotic and violent content nor is a film in the "Frozen" series.
+  Generated:   ((Containsexcessiveeroticandviolentcontent(hachi)) ∧ (Isafilminseries(hachi, frozen))) ⨁ (¬((Containsexcessiveeroticandviolentcontent(hachi)) ∧ (Isafilminseries(hachi, frozen))))
+  Ground Truth:¬((Contain(x, excessiveEroticContent) ∧ Contain(x, excessiveViolentContent)) ⊕ InfrozenSeries(excessiveViolentContent))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 8] Sample 19:
+  NL:          Aurochs are extinct.
+  Generated:   Extinct(aurochs)
+  Ground Truth:∀x (Auroch(x) → Dead(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 20:
+  NL:          The mixture contains carbon.
+  Generated:   Contains(mixture, carbon)
+  Ground Truth:Contain(mixture, carbon)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 21:
+  NL:          The mixture is an alkane and contains carbon.
+  Generated:   (Alkane(mixture)) ∧ (Containscarbon(mixture))
+  Ground Truth:Alkane(mixture) ∧ Contain(mixture, carbon)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 22:
+  NL:          James has a part-time job offered by the university.
+  Generated:   (Hasparttimejob(james)) ∧ (Offeredby(university, parttimejob))
+  Ground Truth:∃y (PartTimeJob(y) ∧ Have(james, y) ∧ OfferedBy(y, university))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 8] Sample 23:
+  NL:          James takes the database course.
+  Generated:   Takecourse(james, databasecourse)
+  Ground Truth:Take(james, databaseCourse)
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 8: 8.7%  (2/23)
+============================================================
+
+[Bin 9] Sample 1:
+  NL:          Bonnie performs in school talent shows often.
+  Generated:   (Performsinschooltalentshows(bonnie)) ∧ (Often(bonnie))
+  Ground Truth:InThisClub(bonnie) ∧ (Perform(bonnie, schoolTalentShow))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 2:
+  NL:          If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.
+  Generated:   Error
+  Ground Truth:¬((YoungChildren(bonnie) ⊕ Teenager(bonnie)) ∧ WishToFurther(bonnie, academicCareer)) ⊕ Chaperone(bonnie, highSchoolDance)) → (Studen(x) ∧ AttendSchool(x)) ⊕ (YoungChildren(bonnie) ⊕ Teenager(bonnie)) ∧ WishToFurther(bonnie, academicCareer))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 3:
+  NL:          If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.
+  Generated:   Error
+  Ground Truth:(Chaperone(bonnie, highSchoolDance) ⊕ Perform(bonnie, schoolTalentShow)) → (YoungChildren(bonnie) ⊕ Teenager(bonnie)) ∧ WishToFurther(bonnie, academicCareer)) ∧ (InActive(bonnie) ∧ Disinterested(bonnie) ∧ MemberOf(bonnie, community))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 4:
+  NL:          James does not have lunch in the company.
+  Generated:   ¬(Haslunch(james, company))
+  Ground Truth:¬HasLunch(james, company)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 5:
+  NL:          If James is either a manager or in other countries,  then James does not either has lunch at home or work remotely from home. If James either has lunch at home or works remotely from home, then he is neither a manager nor does he work in other countries. [contrapositive is more natural]
+  Generated:   Error
+  Ground Truth:Manager(james) → ¬Work(james, home)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 6:
+  NL:          Djokovic is a Grand Slam champion.
+  Generated:   Grandslamchampion(djokovic)
+  Ground Truth:GrandSlam(djokovic) ∧ Champion(djokovic)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 7:
+  NL:          Djokovic lives in a tax haven.
+  Generated:   Livein(djokovic, taxhaven)
+  Ground Truth:LiveIn(djokovic, taxHaven)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 8:
+  NL:          Djokovic does not live in a tax haven.
+  Generated:   ¬(Livein(djokovic, taxhaven))
+  Ground Truth:¬LiveIn(djokovic, taxHaven)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 9:
+  NL:          A design by Max is a brutalist building.
+  Generated:   (Designby(max)) ↔ (Brutalistbuilding(design))
+  Ground Truth:∃x (Design(x) ∧ ByMax(x) ∧ BrutalistBuilding(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 10:
+  NL:          A design by Max is evocative and dreamy.
+  Generated:   (Design(x)) → ((Evocative(x)) ∧ (Dreamy(x)))
+  Ground Truth:∃x (Design(x) ∧ ByMax(x) ∧ Evocative(x) ∧ Dreamy(x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 11:
+  NL:          A design by Max is either evocative or dreamy.
+  Generated:   ((Evocative(x)) ∨ (Dreamy(x))) ∧ (Bymax(x))
+  Ground Truth:∃x (Design(x) ∧ ByMax(x) ∧ (Evocative(x) ⊕ Dreamy(x)))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 12:
+  NL:          Coco Gauff is not both a player who lost to Iga Świątek at Roland Garros 2022 and one of the most active players in major tennis.
+  Generated:   Error
+  Ground Truth:¬(LostTo(cocoGauff, świątek) ∧ At(cocoGauff, rolandGarros2022)) ∨ ¬MostActivePlayerIn(cocoGauff, majorTennis)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 13:
+  NL:          James's favorite season is summer.
+  Generated:   Favoriteseason(james, summer)
+  Ground Truth:Favorite(james, summer)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 14:
+  NL:          Mia's favorite season is spring.
+  Generated:   Favoriteseason(mia, spring)
+  Ground Truth:Favorite(mia, spring)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 15:
+  NL:          Butte and St Pierre are in the same state.
+  Generated:   (Locatedin(butte, state)) ∧ (Locatedin(stpierre, state))
+  Ground Truth:∃x (In(butte, x) ∧ In(stPierre, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 16:
+  NL:          St Pierre and Bismarck are in the same state.
+  Generated:   (Locatedin(stpierre, state)) ∧ (Locatedin(bismarck, state))
+  Ground Truth:∃x (City(pierre) ∧ In(pierre, x) ∧ City(bismarck) ∧ In(bismarck, x))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 17:
+  NL:          Montana is home to the city of Missoula.
+  Generated:   Locatedin(missoula, montana)
+  Ground Truth:City(missoula) ∧ In(missoula, montana)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 18:
+  NL:          A private Ivy League research university moved to New Haven.
+  Generated:   ∃x((Privateivyleagueresearchuniversity(x)) ∧ (Movedto(x, newhaven)))
+  Ground Truth:∃x (PrivateIvyLeagueResearchUniversity(x) ∧ MovedTo(x, newHaven))
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 19:
+  NL:          Pierson College is a residential college at Yale.
+  Generated:   (Residentialcollege(piersoncollege)) ∧ (Yale(piersoncollege))
+  Ground Truth:ResidentialCollege(piersonCollege) ∧ At(piersonCollege, yale)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 20:
+  NL:          Tom will rent an apartment in The Olive Garden.
+  Generated:   Willrentapartment(tom, theolivegarden)
+  Ground Truth:RentApartmentIn(tom, oliveGarden)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 21:
+  NL:          Tom is allowed to move into an apartment in The Olive Garden with Fluffy.
+  Generated:   Error
+  Ground Truth:AllowedToMoveInWith(tom, oliveGarden, fluffy)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 22:
+  NL:          The security deposit at the Olive Garden is either $2000 or more.
+  Generated:   (Securitydepositat(olivegarden, amount2000)) ∨ (Morethan(amount2000, amount))
+  Ground Truth:∀x (SecurityDeposit(x, oliveGarden) → MoreThan(x, uSD2000) ⊕ Equal(x, uSD2000))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 23:
+  NL:          John's car is a Tesla Model 3.
+  Generated:   Error: name 'Equality' is not defined
+  Ground Truth:TeslaModel3(johnsCar)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 24:
+  NL:          John's car is a Solo EV.
+  Generated:   (Car(johnscar)) ∧ (Soloev(johnscar))
+  Ground Truth:SoloEV(johnsCar) ∧ Car(johnsCar)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 25:
+  NL:          John's car is not a Solo EV.
+  Generated:   ¬(Soloev(johnscar))
+  Ground Truth:¬(SoloEV(johnsCar) ∧ Car(johnsCar))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 26:
+  NL:          Rock is a monkey.
+  Generated:   Monkey(rock)
+  Ground Truth:Monkey(rock)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 27:
+  NL:          Rock has wings.
+  Generated:   Error
+  Ground Truth:∃y ∃z (¬(y=z) ∧ Wing(y) ∧ Wing(z) ∧ Have(rock, y) ∧ Have(rock, z))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 28:
+  NL:          Rock does not have wings.
+  Generated:   (Rock(x)) → (¬(Havewings(x)))
+  Ground Truth:¬(∃y ∃z (¬(y=z) ∧ Wing(y) ∧ Wing(z) ∧ Have(rock, y) ∧ Have(rock, z)))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 29:
+  NL:          John has a larger family.
+  Generated:   Error: name 'GreaterThan' is not defined
+  Ground Truth:Have(john, largeFamily)
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 30:
+  NL:          John does not have a larger family.
+  Generated:   (Havefamily(john)) → (¬(Size(john, larger)))
+  Ground Truth:¬Have(john, largerFamily)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 31:
+  NL:          John is engaged.
+  Generated:   Engaged(john)
+  Ground Truth:Engaged(john)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 32:
+  NL:          John neither has a larger family nor does he invite others to his wedding.
+  Generated:   (¬(Hasfamily(john))) ∧ (¬(Inviteotherstowedding(john)))
+  Ground Truth:¬Have(john, largerFamily) ∧ ¬(∃y ∃z (¬(y=john) ∧ ¬(z=john) ∧ ¬(y=z) ∧ InviteToComeTo(john, y, wedding) ∧ InviteToComeTo(john, z, wedding)))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 33:
+  NL:          Some Heck cattle are artificially selected.
+  Generated:   ∃x((Heckcattle(x)) ∧ (Artificiallyselected(x)))
+  Ground Truth:∃x ∃y(HeckCattle(x) ∧ ArtificialSelection(x) ∧ (¬(x=y)) ∧ HeckCattle(y) ∧ ArtificialSelection(y))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 34:
+  NL:          If the mixture contains only one element or contains carbon, then the mixture is neither a chemical compound nor an alkane.
+  Generated:   Error
+  Ground Truth:(∀x ∀y (Contain(mixture, x) ∧ Contain(mixture, y) ∧ x=y)) ∨ Contain(mixture, carbon) → ¬(Chemical(mixture) ∧ Compound(mixture)) ∧ ¬Alkane(mixture))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 35:
+  NL:          James does not have a part-time job offered by the university.
+  Generated:   ¬(Haveparttimejobofferedbyuniversity(james))
+  Ground Truth:¬∃y(PartTimeJob(y) ∧ Have(james, y) ∧ OfferedBy(y, university))
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 36:
+  NL:          James either takes the database course or has a part-time job offered by the university.
+  Generated:   (Takesdatabasecourse(james)) ∨ (Hasparttimejobofferedbyuniversity(james))
+  Ground Truth:Take(james, databaseCourse) ⊕ (∃y (PartTimeJob(y) ∧ Have(james, y) ∧ OfferedBy(y, university))
+  Match: False  |  Method: string_match
+----------------------------------------
+[Bin 9] Sample 37:
+  NL:          KiKi is terricolous.
+  Generated:   Terricolous(kiki)
+  Ground Truth:Terricolous(kiki)
+  Match: True  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 38:
+  NL:          KiKi is a barking dog.
+  Generated:   Bark(kiki)
+  Ground Truth:Bark(kiki) ∧ Dog(kiki)
+  Match: False  |  Method: z3
+----------------------------------------
+[Bin 9] Sample 39:
+  NL:          KiKi does not bark and he is not a dog.
+  Generated:   (Doesnotbark(kiki)) ∧ (¬(Dog(kiki)))
+  Ground Truth:¬Bark(kiki) ∧ ¬Dog(kiki)
+  Match: False  |  Method: z3
+----------------------------------------
+
+Bin 9: 20.5%  (8/39)
+============================================================
+
+
+Overall: 22.2%  (45/203)

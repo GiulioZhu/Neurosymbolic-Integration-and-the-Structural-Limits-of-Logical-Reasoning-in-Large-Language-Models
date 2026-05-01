@@ -1,56 +1,56 @@
 {
   "Bin 1": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 14,
+    "correct": 5,
+    "errors": 0,
+    "accuracy": 35.714285714285715
   },
   "Bin 2": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 25,
+    "correct": 11,
+    "errors": 0,
+    "accuracy": 44.0
   },
   "Bin 3": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 24,
+    "correct": 12,
+    "errors": 0,
+    "accuracy": 50.0
   },
   "Bin 4": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 20,
+    "correct": 6,
+    "errors": 0,
+    "accuracy": 30.0
   },
   "Bin 5": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 23,
+    "correct": 8,
+    "errors": 0,
+    "accuracy": 34.78260869565217
   },
   "Bin 6": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 23,
+    "correct": 8,
+    "errors": 2,
+    "accuracy": 34.78260869565217
   },
   "Bin 7": {
-    "total": 1,
-    "correct": 0,
+    "total": 12,
+    "correct": 5,
     "errors": 1,
-    "accuracy": 0.0
+    "accuracy": 41.66666666666667
   },
   "Bin 8": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 23,
+    "correct": 8,
+    "errors": 0,
+    "accuracy": 34.78260869565217
   },
   "Bin 9": {
-    "total": 1,
-    "correct": 0,
-    "errors": 1,
-    "accuracy": 0.0
+    "total": 39,
+    "correct": 13,
+    "errors": 0,
+    "accuracy": 33.33333333333333
   }
 }

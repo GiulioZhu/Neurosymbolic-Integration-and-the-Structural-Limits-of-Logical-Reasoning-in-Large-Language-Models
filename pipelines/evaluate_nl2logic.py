@@ -197,6 +197,10 @@ async def evaluate(backend: str, model: str, url: str, num_samples: int | None, 
     
     out_path    = os.path.join(result_dir, "evaluation_results_nl2logic.txt")
     raw_path    = os.path.join(result_dir, "nl2logic_raw_outputs.jsonl")
+    
+    if not os.path.exists(binned_path):
+        # Fallback to data/{DATASET}/
+        binned_path = os.path.join(_HERE, "..", "data", ds_upper, filename)
 
     if not os.path.exists(binned_path):
         print(f"[ERROR] Binned dataset [{dataset}] not found at {binned_path}.")
