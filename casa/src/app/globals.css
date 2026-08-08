@@ -1,0 +1,243 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Casa — design token
+   Base neutra calda, un solo accento. Il dark non è un'inversione: le
+   superfici restano tiepide e i contrasti più bassi (si usa di sera).
+   ========================================================================== */
+
+:root,
+:root[data-theme="light"] {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --surface-2: #f3efe9;
+  --surface-3: #ebe5dc;
+  --border: #e9e3da;
+  --text: #1b1917;
+  --muted: #7c736b;
+  --faint: #a69c93;
+  --accent: #c25a38;
+  --accent-hover: #ad4e2f;
+  --accent-soft: #faede7;
+  --accent-contrast: #ffffff;
+  --shadow-soft: 0 8px 30px rgba(28, 20, 14, 0.1);
+  --shadow-lift: 0 2px 8px rgba(28, 20, 14, 0.06);
+  --kind-task: #3f8f7e;
+  --kind-event: #7a6bb5;
+  --kind-expense: #c4873c;
+  --kind-note: #8a8175;
+  --danger: #c0453c;
+  --success: #4e8a5f;
+}
+
+:root[data-theme="dark"] {
+  --bg: #131211;
+  --surface: #1c1a18;
+  --surface-2: #252220;
+  --surface-3: #302c29;
+  --border: #332e2a;
+  --text: #f5f2ed;
+  --muted: #a39a91;
+  --faint: #7a716a;
+  --accent: #e8825e;
+  --accent-hover: #f0906e;
+  --accent-soft: #33221b;
+  --accent-contrast: #1b1210;
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --shadow-lift: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --kind-task: #5cb3a0;
+  --kind-event: #9c8fd6;
+  --kind-expense: #dda45f;
+  --kind-note: #a89f92;
+  --danger: #e0665c;
+  --success: #6fae80;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --radius-card: 18px;
+  --radius-field: 14px;
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+/* ========================================================================== */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+
+/* iOS zooma sugli input sotto i 16px */
+input,
+textarea,
+select {
+  font-size: 16px;
+  font-family: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- scrollbar discreta -------------------------------------------------- */
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- primitive ricorrenti ------------------------------------------------ */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* --- animazioni ---------------------------------------------------------- */
+
+@keyframes casa-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes casa-sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes casa-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes casa-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: casa-rise 0.2s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+.animate-sheet {
+  animation: casa-sheet-in 0.26s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+.animate-fade {
+  animation: casa-fade-in 0.18s ease both;
+}
+
+.animate-pop {
+  animation: casa-pop 0.22s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+.press {
+  transition:
+    transform 0.12s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

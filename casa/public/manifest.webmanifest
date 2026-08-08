@@ -1,0 +1,54 @@
+{
+  "name": "Casa — spazio condiviso",
+  "short_name": "Casa",
+  "description": "Task, eventi, note e spese di una coppia, in un posto solo.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
+  "lang": "it",
+  "dir": "ltr",
+  "categories": ["productivity", "lifestyle", "finance"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nuova spesa",
+      "short_name": "Spesa",
+      "url": "/expenses",
+      "description": "Registra una spesa in due tap"
+    },
+    {
+      "name": "Attività",
+      "short_name": "Task",
+      "url": "/tasks",
+      "description": "Le cose da fare"
+    },
+    {
+      "name": "Calendario",
+      "short_name": "Calendario",
+      "url": "/calendar",
+      "description": "Eventi e scadenze"
+    }
+  ]
+}
